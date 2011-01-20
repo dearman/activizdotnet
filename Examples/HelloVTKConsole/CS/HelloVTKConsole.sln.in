@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloVTKConsole", "HelloVTKConsole.csproj", "{2229F017-B30C-4921-B3DF-8A1A2557D230}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|@AVDN_PLATFORM@ = Debug|@AVDN_PLATFORM@
+		Release|@AVDN_PLATFORM@ = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2229F017-B30C-4921-B3DF-8A1A2557D230}.Debug|@AVDN_PLATFORM@.ActiveCfg = Debug|@AVDN_PLATFORM@
+		{2229F017-B30C-4921-B3DF-8A1A2557D230}.Debug|@AVDN_PLATFORM@.Build.0 = Debug|@AVDN_PLATFORM@
+		{2229F017-B30C-4921-B3DF-8A1A2557D230}.Release|@AVDN_PLATFORM@.ActiveCfg = Release|@AVDN_PLATFORM@
+		{2229F017-B30C-4921-B3DF-8A1A2557D230}.Release|@AVDN_PLATFORM@.Build.0 = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

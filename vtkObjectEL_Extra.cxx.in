@@ -1,0 +1,150 @@
+
+#include "vtksys/ios/sstream"
+#include "vtksys/stl/string"
+
+
+//----------------------------------------------------------------------------
+extern "C" MUMMY_DLL_EXPORT
+const char *vtkObject_Print(vtkObject* pThis)
+{
+   vtksys_ios::ostringstream oss;
+   pThis->Print(oss);
+
+   vtksys_stl::string rvmi(oss.str());
+
+   const char* rvm = rvmi.c_str();
+   size_t n = 0;
+
+   if (rvm)
+      {
+      n = strlen(rvm);
+      }
+
+   char* rv = (char*) MUMMY_STRING_ALLOC(n+1);
+   if (rv)
+      {
+      strncpy(rv, rvm, n);
+      rv[n] = 0;
+      }
+
+   return rv;
+}
+
+
+//----------------------------------------------------------------------------
+//
+// Hand-crafted implementation of vtkObjectEventRelay:
+//
+
+//----------------------------------------------------------------------------
+#include "vtkCommand.h"
+
+//----------------------------------------------------------------------------
+class vtkObjectEventRelayCommand : public vtkCommand
+{
+public:
+    vtkObjectEventRelayCommand()
+    {
+        this->Callback = 0;
+    }
+
+    void SetCallback(void (MUMMY_RUNTIME_CC *f)(vtkObject *caller, unsigned long eid, void *calldata))
+    {
+        this->Callback = f;
+    }
+
+    virtual void Execute(vtkObject *caller, unsigned long eventId, void *callData)
+    {
+        (*this->Callback)(caller, eventId, callData);
+    }
+
+private:
+    void (MUMMY_RUNTIME_CC *Callback)(vtkObject *caller, unsigned long eid, void *calldata);
+};
+
+
+//----------------------------------------------------------------------------
+class vtkObjectEventRelay
+{
+public:
+  vtkObjectEventRelay()
+  {
+      this->Sender = 0;
+      this->EventId = 0;
+      this->Command = 0;
+      this->Priority = 0.0;
+  }
+
+  virtual ~vtkObjectEventRelay()
+  {
+      if (this->Command != 0)
+      {
+        this->Command->Delete();
+        this->Command = 0;
+      }
+  }
+
+  vtkObject *Sender;
+  unsigned int EventId;
+  vtkObjectEventRelayCommand *Command;
+  float Priority;
+};
+
+
+//----------------------------------------------------------------------------
+extern "C" MUMMY_DLL_EXPORT
+vtkObjectEventRelay* vtkObjectEventRelay_New(unsigned int* mteStatus, unsigned int* mteIndex, unsigned int* rawRefCount)
+{
+   vtkObjectEventRelay* rv = 0;
+
+   rv = new vtkObjectEventRelay();
+   if (0 != rv)
+      {
+      vtkObjectEventRelay* ro = (vtkObjectEventRelay*) (void*) rv;
+      Kitware::mummy::TypeEntry* entry = Kitware::mummy::Runtime::GetTypeEntry(
+         (void*) rv, typeid(*ro).name());
+      *mteStatus = 0;
+      *mteIndex = entry->GetIndex();
+      *rawRefCount = 1;
+      }
+
+   return rv;
+}
+
+
+//----------------------------------------------------------------------------
+extern "C" MUMMY_DLL_EXPORT
+void vtkObjectEventRelay_Delete(vtkObjectEventRelay* pThis)
+{
+  delete pThis;
+}
+
+
+//----------------------------------------------------------------------------
+extern "C" MUMMY_DLL_EXPORT
+unsigned long vtkObjectEventRelay_AddObserver(vtkObjectEventRelay* pThis, vtkObject* sender, unsigned long eventid, void (MUMMY_RUNTIME_CC *f)(vtkObject *caller, unsigned long eid, void *calldata), float priority)
+{
+   unsigned long rv = 0;
+
+   pThis->Sender = sender;
+   pThis->EventId = eventid;
+   pThis->Command = new vtkObjectEventRelayCommand;
+   pThis->Priority = priority;
+
+   pThis->Command->SetCallback(f);
+
+   rv = pThis->Sender->AddObserver(eventid, pThis->Command, priority);
+
+   return rv;
+}
+
+
+//----------------------------------------------------------------------------
+extern "C" MUMMY_DLL_EXPORT
+void vtkObjectEventRelay_RemoveObserver(vtkObjectEventRelay* pThis, unsigned long observerId)
+{
+   pThis->Sender->RemoveObserver(observerId);
+
+   pThis->Command->Delete();
+   pThis->Command = 0;
+}

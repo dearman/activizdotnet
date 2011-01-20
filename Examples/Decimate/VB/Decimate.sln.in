@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Decimate", "Decimate.vbproj", "{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|@AVDN_PLATFORM@ = Debug|@AVDN_PLATFORM@
+		Release|@AVDN_PLATFORM@ = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}.Debug|@AVDN_PLATFORM@.ActiveCfg = Debug|@AVDN_PLATFORM@
+		{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}.Debug|@AVDN_PLATFORM@.Build.0 = Debug|@AVDN_PLATFORM@
+		{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}.Release|@AVDN_PLATFORM@.ActiveCfg = Release|@AVDN_PLATFORM@
+		{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}.Release|@AVDN_PLATFORM@.Build.0 = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

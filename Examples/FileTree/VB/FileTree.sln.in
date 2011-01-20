@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FileTree", "FileTree.vbproj", "{96191706-7C16-4E01-B7F0-3BDB47A62EEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|@AVDN_PLATFORM@ = Debug|@AVDN_PLATFORM@
+		Release|@AVDN_PLATFORM@ = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96191706-7C16-4E01-B7F0-3BDB47A62EEA}.Debug|@AVDN_PLATFORM@.ActiveCfg = Debug|@AVDN_PLATFORM@
+		{96191706-7C16-4E01-B7F0-3BDB47A62EEA}.Debug|@AVDN_PLATFORM@.Build.0 = Debug|@AVDN_PLATFORM@
+		{96191706-7C16-4E01-B7F0-3BDB47A62EEA}.Release|@AVDN_PLATFORM@.ActiveCfg = Release|@AVDN_PLATFORM@
+		{96191706-7C16-4E01-B7F0-3BDB47A62EEA}.Release|@AVDN_PLATFORM@.Build.0 = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

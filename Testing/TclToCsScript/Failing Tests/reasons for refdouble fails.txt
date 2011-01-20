@@ -1,0 +1,3485 @@
+#This is a the output from running the TclToCSConvertorDriver.py with ref doubl 
+#.txt as the arguments. There are some more tests here than there are in there
+#but that is because some tests have similar names (ie text.tcl is tested 
+#becuase of textureThreshold.tcl)
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript>python TclToCsConvertorDriv
+er.py -teststoconvert "Failing Tests\ref double.txt"
+
+---Generating List To Convert
+
+
+1/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Examples\Annotation\Tcl\xyPlot.tcl" -o "AVxyPlot.cs" -xmldir
+ "C:\Activiz Build\xml"
+
+Converting C:\VTK\Examples\Annotation\Tcl\xyPlot.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVxyPlot.cs C:\Activiz\trunk\Act
+iVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDot
+Net\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVxyPlot.cs(112,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(112,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(112,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot.cs(136,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(136,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(136,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot.cs(159,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(159,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(159,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVxyPlot.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotCom
+piling"
+
+cmake.exe -E remove "AVxyPlot.cs"
+
+------------------------
+
+2/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Examples\VisualizationAlgorithms\Tcl\probeComb.tcl" -o "AVpr
+obeComb.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Examples\VisualizationAlgorithms\Tcl\probeComb.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVprobeComb.cs C:\Activiz\trunk\
+ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tr
+unk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activiz
+DotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVprobeComb.cs(94,34): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobeComb.cs(94,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkContourFilter.GenerateValues(int, ref double)' has some
+        invalid arguments
+AVprobeComb.cs(94,35): error CS1620: Argument '2' must be passed with the 'ref'
+        keyword
+AVprobeComb.cs(97,32): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobeComb.cs(97,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVprobeComb.cs(97,33): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVprobeComb.cs" "Converted CSharp Tests 2008-6-3_10.16.26/Not
+Compiling"
+
+cmake.exe -E remove "AVprobeComb.cs"
+
+------------------------
+
+3/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Filtering\Testing\Tcl\SelectionLoop.tcl" -o "AVSelectionLoop
+.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Filtering\Testing\Tcl\SelectionLoop.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVSelectionLoop.cs C:\Activiz\tr
+unk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activi
+z\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Act
+ivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVSelectionLoop.cs(48,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVSelectionLoop.cs(48,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkConnectivityFilter.SetClosestPoint(ref double)' has some
+        invalid arguments
+AVSelectionLoop.cs(48,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVSelectionLoop.cs" "Converted CSharp Tests 2008-6-3_10.16.26
+/NotCompiling"
+
+cmake.exe -E remove "AVSelectionLoop.cs"
+
+------------------------
+
+4/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\EnSight6OfficeBin.tcl" -o "AVEnSight6Of
+ficeBin.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\EnSight6OfficeBin.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVEnSight6OfficeBin.cs C:\Activi
+z\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Ac
+tiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVEnSight6OfficeBin.cs(63,72): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetScalarRange' and no extension method
+        'GetScalarRange' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSight6OfficeBin.cs(63,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSight6OfficeBin.cs(63,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVEnSight6OfficeBin.cs" "Converted CSharp Tests 2008-6-3_10.1
+6.26/NotCompiling"
+
+cmake.exe -E remove "AVEnSight6OfficeBin.cs"
+
+------------------------
+
+5/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\EnSightOfficeASCII.tcl" -o "AVEnSightOf
+ficeASCII.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\EnSightOfficeASCII.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVEnSightOfficeASCII.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVEnSightOfficeASCII.cs(65,72): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetScalarRange' and no extension method
+        'GetScalarRange' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightOfficeASCII.cs(65,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightOfficeASCII.cs(65,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVEnSightOfficeASCII.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVEnSightOfficeASCII.cs"
+
+------------------------
+
+6/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\EnSightOfficeBin.tcl" -o "AVEnSightOffi
+ceBin.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\EnSightOfficeBin.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVEnSightOfficeBin.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVEnSightOfficeBin.cs(65,72): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetScalarRange' and no extension method
+        'GetScalarRange' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightOfficeBin.cs(65,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightOfficeBin.cs(65,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVEnSightOfficeBin.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVEnSightOfficeBin.cs"
+
+------------------------
+
+7/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\EnSightRectGridASCII.tcl" -o "AVEnSight
+RectGridASCII.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\EnSightRectGridASCII.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVEnSightRectGridASCII.cs C:\Act
+iviz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:
+\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\tr
+unk\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVEnSightRectGridASCII.cs(50,67): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetCenter' and no extension method
+        'GetCenter' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridASCII.cs(50,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkPlane.SetOrigin(ref double)' has some invalid
+        arguments
+AVEnSightRectGridASCII.cs(50,23): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVEnSightRectGridASCII.cs(57,73): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetPointData' and no extension method
+        'GetPointData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridASCII.cs(57,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightRectGridASCII.cs(57,29): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVEnSightRectGridASCII.cs(88,77): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetPointData' and no extension method
+        'GetPointData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridASCII.cs(88,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightRectGridASCII.cs(88,33): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVEnSightRectGridASCII.cs" "Converted CSharp Tests 2008-6-3_1
+0.16.26/NotCompiling"
+
+cmake.exe -E remove "AVEnSightRectGridASCII.cs"
+
+------------------------
+
+8/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\EnSightRectGridBin.tcl" -o "AVEnSightRe
+ctGridBin.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\EnSightRectGridBin.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVEnSightRectGridBin.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVEnSightRectGridBin.cs(50,67): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetCenter' and no extension method
+        'GetCenter' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridBin.cs(50,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkPlane.SetOrigin(ref double)' has some invalid
+        arguments
+AVEnSightRectGridBin.cs(50,23): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVEnSightRectGridBin.cs(57,73): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetPointData' and no extension method
+        'GetPointData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridBin.cs(57,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightRectGridBin.cs(57,29): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVEnSightRectGridBin.cs(88,77): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetPointData' and no extension method
+        'GetPointData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVEnSightRectGridBin.cs(88,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVEnSightRectGridBin.cs(88,33): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVEnSightRectGridBin.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVEnSightRectGridBin.cs"
+
+------------------------
+
+9/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\ExtractTensors.tcl" -o "AVExtractTensor
+s.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\ExtractTensors.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVExtractTensors.cs C:\Activiz\t
+runk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activ
+iz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Ac
+tivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVExtractTensors.cs(68,21): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVExtractTensors.cs(68,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVExtractTensors.cs(68,22): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVExtractTensors.cs(71,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVExtractTensors.cs(71,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVExtractTensors.cs(71,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVExtractTensors.cs" "Converted CSharp Tests 2008-6-3_10.16.2
+6/NotCompiling"
+
+cmake.exe -E remove "AVExtractTensors.cs"
+
+------------------------
+
+10/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\Hyper.tcl" -o "AVHyper.cs" -xmldir "C:\
+Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\Hyper.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVHyper.cs C:\Activiz\trunk\Acti
+VizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDotN
+et\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVHyper.cs(93,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVHyper.cs(93,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyper.cs(93,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVHyper.cs(110,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVHyper.cs(110,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyper.cs(110,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVHyper.cs(127,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVHyper.cs(127,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyper.cs(127,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVHyper.cs(144,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVHyper.cs(144,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyper.cs(144,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVHyper.cs(156,21): error CS0030: Cannot convert type 'double[]' to 'double'
+AVHyper.cs(156,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyper.cs(156,22): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVHyper.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotComp
+iling"
+
+cmake.exe -E remove "AVHyper.cs"
+
+------------------------
+
+11/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\HyperScalarBar.tcl" -o "AVHyperScalarBa
+r.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\HyperScalarBar.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVHyperScalarBar.cs C:\Activiz\t
+runk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activ
+iz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Ac
+tivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVHyperScalarBar.cs(65,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVHyperScalarBar.cs(65,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyperScalarBar.cs(65,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVHyperScalarBar.cs(82,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVHyperScalarBar.cs(82,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyperScalarBar.cs(82,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVHyperScalarBar.cs(99,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVHyperScalarBar.cs(99,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyperScalarBar.cs(99,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVHyperScalarBar.cs(116,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVHyperScalarBar.cs(116,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyperScalarBar.cs(116,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVHyperScalarBar.cs(128,21): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVHyperScalarBar.cs(128,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVHyperScalarBar.cs(128,22): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVHyperScalarBar.cs" "Converted CSharp Tests 2008-6-3_10.16.2
+6/NotCompiling"
+
+cmake.exe -E remove "AVHyperScalarBar.cs"
+
+------------------------
+
+12/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\MultidimensionalSolution.tcl" -o "AVMul
+tidimensionalSolution.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\MultidimensionalSolution.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVMultidimensionalSolution.cs C:
+\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /referenc
+e:C:\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activi
+z\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVMultidimensionalSolution.cs(170,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(171,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(174,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(175,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(176,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(177,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(178,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(179,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(180,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(181,8): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(536,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(542,40): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(548,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(554,40): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(584,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(590,34): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(596,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(602,34): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(608,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(614,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(620,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(626,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(632,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(638,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(644,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(650,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(656,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(662,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(668,23): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+AVMultidimensionalSolution.cs(674,35): error CS0246: The type or namespace name
+        'None' could not be found (are you missing a using directive or an
+        assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVMultidimensionalSolution.cs" "Converted CSharp Tests 2008-6
+-3_10.16.26/NotCompiling"
+
+cmake.exe -E remove "AVMultidimensionalSolution.cs"
+
+------------------------
+
+13/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\TenEllip.tcl" -o "AVTenEllip.cs" -xmldi
+r "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\TenEllip.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTenEllip.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTenEllip.cs(63,30): error CS0030: Cannot convert type 'double[]' to 'double'
+AVTenEllip.cs(63,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVTenEllip.cs(63,31): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVTenEllip.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVTenEllip.cs"
+
+------------------------
+
+14/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\TestCellDerivs.tcl" -o "AVTestCellDeriv
+s.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\TestCellDerivs.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestCellDerivs.cs C:\Activiz\t
+runk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activ
+iz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Ac
+tivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestCellDerivs.cs(551,19): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(552,23): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(552,26): error CS1520: Method must have a return type
+AVTestCellDerivs.cs(552,34): error CS1031: Type expected
+AVTestCellDerivs.cs(552,41): error CS1519: Invalid token ')' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(553,23): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(553,26): error CS1520: Method must have a return type
+AVTestCellDerivs.cs(553,36): error CS1031: Type expected
+AVTestCellDerivs.cs(553,43): error CS1519: Invalid token ')' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(554,23): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(554,26): error CS1520: Method must have a return type
+AVTestCellDerivs.cs(554,32): error CS1031: Type expected
+AVTestCellDerivs.cs(554,39): error CS1519: Invalid token ')' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(555,32): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(556,17): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(556,22): error CS1519: Invalid token ')' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(556,31): error CS1519: Invalid token ')' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(557,16): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(560,18): error CS1519: Invalid token '(' in class, struct,
+        or interface member declaration
+AVTestCellDerivs.cs(564,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(565,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(566,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(567,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(568,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(569,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(570,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(571,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(572,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(573,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(574,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(575,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(576,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(577,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(578,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(579,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(580,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(581,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(582,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(583,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(584,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(585,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(586,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(587,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(588,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(589,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(590,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(591,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(592,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(593,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(594,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(595,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(596,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(597,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(598,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(599,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(600,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(601,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(602,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(603,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(604,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(605,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(606,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(607,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(608,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(609,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(610,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(611,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(612,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(613,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(614,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(615,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(616,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(617,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(618,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(619,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(620,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(621,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(622,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(623,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(624,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(625,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(626,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(627,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(628,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(629,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(630,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(631,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(632,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(633,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(634,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(635,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(636,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(637,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(638,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(639,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(640,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(641,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(642,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(643,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(644,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(645,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(646,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(647,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(648,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(649,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(650,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(651,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(652,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(652,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(652,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(652,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(652,46): error CS1001: Identifier expected
+AVTestCellDerivs.cs(653,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(654,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(655,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(656,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(656,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(656,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(656,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(656,51): error CS1001: Identifier expected
+AVTestCellDerivs.cs(657,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(658,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(659,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(659,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(659,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(659,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(659,58): error CS1001: Identifier expected
+AVTestCellDerivs.cs(660,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(660,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(660,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(660,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(660,47): error CS1001: Identifier expected
+AVTestCellDerivs.cs(661,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(661,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(661,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(661,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(661,44): error CS1001: Identifier expected
+AVTestCellDerivs.cs(662,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(662,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(662,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(662,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(662,50): error CS1001: Identifier expected
+AVTestCellDerivs.cs(663,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(663,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(663,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(663,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(663,41): error CS1001: Identifier expected
+AVTestCellDerivs.cs(664,8): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(664,22): error CS1001: Identifier expected
+AVTestCellDerivs.cs(664,26): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(664,32): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(664,43): error CS1001: Identifier expected
+AVTestCellDerivs.cs(668,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(674,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(680,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(686,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(692,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(698,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(704,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(710,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(716,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(722,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(728,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(734,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(740,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(746,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(752,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(758,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(764,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(770,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(776,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(782,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(788,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(794,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(800,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(806,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(812,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(818,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(824,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(830,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(836,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(842,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(848,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(854,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(860,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(866,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(872,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(878,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(884,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(890,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(896,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(902,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(908,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(914,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(920,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(926,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(932,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(938,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(944,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+AVTestCellDerivs.cs(950,23): error CS1518: Expected class, delegate, enum,
+        interface, or struct
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestCellDerivs.cs" "Converted CSharp Tests 2008-6-3_10.16.2
+6/NotCompiling"
+
+cmake.exe -E remove "AVTestCellDerivs.cs"
+
+------------------------
+
+15/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\TestGridSynchronizedTemplates3D.tcl" -o
+ "AVTestGridSynchronizedTemplates3D.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\TestGridSynchronizedTemplates3D.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestGridSynchronizedTemplates3
+D.cs C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /r
+eference:C:\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:
+\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestGridSynchronizedTemplates3D.cs(30,11): error CS0029: Cannot implicitly
+        convert type 'double[]' to 'System.IntPtr'
+AVTestGridSynchronizedTemplates3D.cs(42,27): error CS0030: Cannot convert type
+        'double[]' to 'double'
+AVTestGridSynchronizedTemplates3D.cs(42,3): error CS1502: The best overloaded
+        method match for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has
+        some invalid arguments
+AVTestGridSynchronizedTemplates3D.cs(42,28): error CS1620: Argument '1' must be
+        passed with the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestGridSynchronizedTemplates3D.cs" "Converted CSharp Tests
+ 2008-6-3_10.16.26/NotCompiling"
+
+cmake.exe -E remove "AVTestGridSynchronizedTemplates3D.cs"
+
+------------------------
+
+16/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\TestSplineFilter.tcl" -o "AVTestSplineF
+ilter.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\TestSplineFilter.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestSplineFilter.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestSplineFilter.cs(70,31): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVTestSplineFilter.cs(70,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVTestSplineFilter.cs(70,32): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestSplineFilter.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVTestSplineFilter.cs"
+
+------------------------
+
+17/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\combStreamers.tcl" -o "AVcombStreamers.
+cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\combStreamers.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVcombStreamers.cs C:\Activiz\tr
+unk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activi
+z\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Act
+ivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVcombStreamers.cs(66,31): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVcombStreamers.cs(66,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVcombStreamers.cs(66,32): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVcombStreamers.cs" "Converted CSharp Tests 2008-6-3_10.16.26
+/NotCompiling"
+
+cmake.exe -E remove "AVcombStreamers.cs"
+
+------------------------
+
+18/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\combStreamers2.tcl" -o "AVcombStreamers
+2.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\combStreamers2.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVcombStreamers2.cs C:\Activiz\t
+runk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activ
+iz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Ac
+tivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVcombStreamers2.cs(59,31): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVcombStreamers2.cs(59,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVcombStreamers2.cs(59,32): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVcombStreamers2.cs" "Converted CSharp Tests 2008-6-3_10.16.2
+6/NotCompiling"
+
+cmake.exe -E remove "AVcombStreamers2.cs"
+
+------------------------
+
+19/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\cursor3D.tcl" -o "AVcursor3D.cs" -xmldi
+r "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\cursor3D.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVcursor3D.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVcursor3D.cs(44,25): error CS0030: Cannot convert type 'double[]' to 'double'
+AVcursor3D.cs(44,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkCursor3D.SetModelBounds(ref double)' has some invalid
+        arguments
+AVcursor3D.cs(44,26): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVcursor3D.cs(45,24): error CS0030: Cannot convert type 'double[]' to 'double'
+AVcursor3D.cs(45,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkCursor3D.SetFocalPoint(ref double)' has some invalid
+        arguments
+AVcursor3D.cs(45,25): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVcursor3D.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVcursor3D.cs"
+
+------------------------
+
+20/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\dataSetSurfaceFilter.tcl" -o "AVdataSet
+SurfaceFilter.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\dataSetSurfaceFilter.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVdataSetSurfaceFilter.cs C:\Act
+iviz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:
+\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\tr
+unk\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVdataSetSurfaceFilter.cs(35,26): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(35,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(35,27): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(43,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(43,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(43,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(53,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(53,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(53,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(62,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(62,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(62,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(69,15): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(69,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkSphere.SetCenter(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(69,16): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(79,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(79,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(79,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(88,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(88,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(88,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVdataSetSurfaceFilter.cs(101,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(101,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(101,28): error CS1620: Argument '1' must be passed
+        with the 'ref' keyword
+AVdataSetSurfaceFilter.cs(110,27): error CS0030: Cannot convert type 'double[]'
+        to 'double'
+AVdataSetSurfaceFilter.cs(110,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVdataSetSurfaceFilter.cs(110,28): error CS1620: Argument '1' must be passed
+        with the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVdataSetSurfaceFilter.cs" "Converted CSharp Tests 2008-6-3_1
+0.16.26/NotCompiling"
+
+cmake.exe -E remove "AVdataSetSurfaceFilter.cs"
+
+------------------------
+
+21/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\extractRectGrid.tcl" -o "AVextractRectG
+rid.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\extractRectGrid.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVextractRectGrid.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVextractRectGrid.cs(48,26): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVextractRectGrid.cs(48,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVextractRectGrid.cs(48,27): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVextractRectGrid.cs(54,28): error CS0103: The name 'source' does not exist in
+        the current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVextractRectGrid.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVextractRectGrid.cs"
+
+------------------------
+
+22/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\fieldToPolyData.tcl" -o "AVfieldToPolyD
+ata.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\fieldToPolyData.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVfieldToPolyData.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVfieldToPolyData.cs(65,29): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVfieldToPolyData.cs(65,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVfieldToPolyData.cs(65,30): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVfieldToPolyData.cs(86,32): error CS0103: The name 'source' does not exist in
+        the current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVfieldToPolyData.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVfieldToPolyData.cs"
+
+------------------------
+
+23/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\fieldToRGrid.tcl" -o "AVfieldToRGrid.cs
+" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\fieldToRGrid.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVfieldToRGrid.cs C:\Activiz\tru
+nk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz
+\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Acti
+vizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVfieldToRGrid.cs(81,26): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVfieldToRGrid.cs(81,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkPlane.SetOrigin(ref double)' has some invalid arguments
+AVfieldToRGrid.cs(81,27): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVfieldToRGrid.cs(88,32): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVfieldToRGrid.cs(88,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVfieldToRGrid.cs(88,33): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVfieldToRGrid.cs(118,36): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVfieldToRGrid.cs(118,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVfieldToRGrid.cs(118,37): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVfieldToRGrid.cs(154,32): error CS0103: The name 'source' does not exist in the
+        current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVfieldToRGrid.cs" "Converted CSharp Tests 2008-6-3_10.16.26/
+NotCompiling"
+
+cmake.exe -E remove "AVfieldToRGrid.cs"
+
+------------------------
+
+24/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\geomFilter.tcl" -o "AVgeomFilter.cs" -x
+mldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\geomFilter.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVgeomFilter.cs C:\Activiz\trunk
+\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\t
+runk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activi
+zDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVgeomFilter.cs(35,26): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(35,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(35,27): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(50,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(50,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(50,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(60,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(60,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(60,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(76,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(76,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(76,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(83,15): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(83,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkSphere.SetCenter(ref double)' has some invalid arguments
+AVgeomFilter.cs(83,16): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(93,27): error CS0030: Cannot convert type 'double[]' to 'double'
+AVgeomFilter.cs(93,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(93,28): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVgeomFilter.cs(109,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVgeomFilter.cs(109,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(109,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVgeomFilter.cs(122,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVgeomFilter.cs(122,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(122,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVgeomFilter.cs(138,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVgeomFilter.cs(138,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVgeomFilter.cs(138,28): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVgeomFilter.cs" "Converted CSharp Tests 2008-6-3_10.16.26/No
+tCompiling"
+
+cmake.exe -E remove "AVgeomFilter.cs"
+
+------------------------
+
+25/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\headBone.tcl" -o "AVheadBone.cs" -xmldi
+r "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\headBone.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVheadBone.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVheadBone.cs(83,19): error CS0030: Cannot convert type 'double[]' to 'double'
+AVheadBone.cs(83,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetPosition(ref double)' has some invalid
+        arguments
+AVheadBone.cs(83,20): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVheadBone.cs(84,21): error CS0030: Cannot convert type 'double[]' to 'double'
+AVheadBone.cs(84,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetFocalPoint(ref double)' has some invalid
+        arguments
+AVheadBone.cs(84,22): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVheadBone.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVheadBone.cs"
+
+------------------------
+
+26/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\mergeFilter.tcl" -o "AVmergeFilter.cs"
+-xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\mergeFilter.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVmergeFilter.cs C:\Activiz\trun
+k\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\
+trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activ
+izDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVmergeFilter.cs(53,30): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVmergeFilter.cs(53,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVmergeFilter.cs(53,31): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVmergeFilter.cs(69,32): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVmergeFilter.cs(69,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVmergeFilter.cs(69,33): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVmergeFilter.cs" "Converted CSharp Tests 2008-6-3_10.16.26/N
+otCompiling"
+
+cmake.exe -E remove "AVmergeFilter.cs"
+
+------------------------
+
+27/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\multipleIso.tcl" -o "AVmultipleIso.cs"
+-xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\multipleIso.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVmultipleIso.cs C:\Activiz\trun
+k\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\
+trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activ
+izDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVmultipleIso.cs(38,11): error CS0029: Cannot implicitly convert type 'double[]'
+        to 'System.IntPtr'
+AVmultipleIso.cs(60,32): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVmultipleIso.cs(60,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVmultipleIso.cs(60,33): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVmultipleIso.cs" "Converted CSharp Tests 2008-6-3_10.16.26/N
+otCompiling"
+
+cmake.exe -E remove "AVmultipleIso.cs"
+
+------------------------
+
+28/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\officeStreamPoints.tcl" -o "AVofficeStr
+eamPoints.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\officeStreamPoints.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVofficeStreamPoints.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVofficeStreamPoints.cs(234,27): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVofficeStreamPoints.cs(234,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVofficeStreamPoints.cs(234,28): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVofficeStreamPoints.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVofficeStreamPoints.cs"
+
+------------------------
+
+29/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\polyConn.tcl" -o "AVpolyConn.cs" -xmldi
+r "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\polyConn.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVpolyConn.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVpolyConn.cs(48,28): error CS0030: Cannot convert type 'double[]' to 'double'
+AVpolyConn.cs(48,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVpolyConn.cs(48,29): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVpolyConn.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVpolyConn.cs"
+
+------------------------
+
+30/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\probe.tcl" -o "AVprobe.cs" -xmldir "C:\
+Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\probe.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVprobe.cs C:\Activiz\trunk\Acti
+VizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDotN
+et\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVprobe.cs(38,19): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobe.cs(38,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkPlane.SetOrigin(ref double)' has some invalid arguments
+AVprobe.cs(38,20): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVprobe.cs(48,28): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobe.cs(48,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVprobe.cs(48,29): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVprobe.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotComp
+iling"
+
+cmake.exe -E remove "AVprobe.cs"
+
+------------------------
+
+31/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\probeComb.tcl" -o "AVprobeComb.cs" -xml
+dir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\probeComb.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVprobeComb.cs C:\Activiz\trunk\
+ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tr
+unk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activiz
+DotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVprobeComb.cs(92,34): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobeComb.cs(92,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkContourFilter.GenerateValues(int, ref double)' has some
+        invalid arguments
+AVprobeComb.cs(92,35): error CS1620: Argument '2' must be passed with the 'ref'
+        keyword
+AVprobeComb.cs(95,32): error CS0030: Cannot convert type 'double[]' to 'double'
+AVprobeComb.cs(95,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVprobeComb.cs(95,33): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVprobeComb.cs" "Converted CSharp Tests 2008-6-3_10.16.26/Not
+Compiling"
+
+cmake.exe -E remove "AVprobeComb.cs"
+
+------------------------
+
+32/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\progGlyphs.tcl" -o "AVprogGlyphs.cs" -x
+mldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\progGlyphs.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVprogGlyphs.cs C:\Activiz\trunk
+\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\t
+runk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activi
+zDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVprogGlyphs.cs(79,8): error CS0246: The type or namespace name 'None' could not
+        be found (are you missing a using directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVprogGlyphs.cs" "Converted CSharp Tests 2008-6-3_10.16.26/No
+tCompiling"
+
+cmake.exe -E remove "AVprogGlyphs.cs"
+
+------------------------
+
+33/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\progGlyphsBySource.tcl" -o "AVprogGlyph
+sBySource.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\progGlyphsBySource.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVprogGlyphsBySource.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVprogGlyphsBySource.cs(95,8): error CS0246: The type or namespace name 'None'
+        could not be found (are you missing a using directive or an assembly
+        reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVprogGlyphsBySource.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVprogGlyphsBySource.cs"
+
+------------------------
+
+34/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\rectGrid.tcl" -o "AVrectGrid.cs" -xmldi
+r "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\rectGrid.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVrectGrid.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVrectGrid.cs(43,22): error CS0030: Cannot convert type 'double[]' to 'double'
+AVrectGrid.cs(43,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkPlane.SetOrigin(ref double)' has some invalid arguments
+AVrectGrid.cs(43,23): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVrectGrid.cs(50,28): error CS0030: Cannot convert type 'double[]' to 'double'
+AVrectGrid.cs(50,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVrectGrid.cs(50,29): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVrectGrid.cs(80,32): error CS0030: Cannot convert type 'double[]' to 'double'
+AVrectGrid.cs(80,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVrectGrid.cs(80,33): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVrectGrid.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVrectGrid.cs"
+
+------------------------
+
+35/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\streamTracer.tcl" -o "AVstreamTracer.cs
+" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\streamTracer.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVstreamTracer.cs C:\Activiz\tru
+nk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz
+\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Acti
+vizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVstreamTracer.cs(63,28): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVstreamTracer.cs(63,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVstreamTracer.cs(63,29): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVstreamTracer.cs" "Converted CSharp Tests 2008-6-3_10.16.26/
+NotCompiling"
+
+cmake.exe -E remove "AVstreamTracer.cs"
+
+------------------------
+
+36/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\subdividePointData.tcl" -o "AVsubdivide
+PointData.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\subdividePointData.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVsubdividePointData.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVsubdividePointData.cs(76,22): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVsubdividePointData.cs(76,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkLight.SetPosition(ref double)' has some invalid
+        arguments
+AVsubdividePointData.cs(76,23): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVsubdividePointData.cs(77,24): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVsubdividePointData.cs(77,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkLight.SetFocalPoint(ref double)' has some invalid
+        arguments
+AVsubdividePointData.cs(77,25): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVsubdividePointData.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVsubdividePointData.cs"
+
+------------------------
+
+37/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Graphics\Testing\Tcl\textureThreshold.tcl" -o "AVtextureThre
+shold.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Graphics\Testing\Tcl\textureThreshold.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVtextureThreshold.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVtextureThreshold.cs(75,28): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVtextureThreshold.cs(75,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVtextureThreshold.cs(75,29): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVtextureThreshold.cs(88,28): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVtextureThreshold.cs(88,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVtextureThreshold.cs(88,29): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVtextureThreshold.cs(101,28): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVtextureThreshold.cs(101,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVtextureThreshold.cs(101,29): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVtextureThreshold.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVtextureThreshold.cs"
+
+------------------------
+
+38/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\TestCaptionActor.tcl" -o "AVTestCaptionAc
+tor.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\TestCaptionActor.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestCaptionActor.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestCaptionActor.cs(54,18): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVTestCaptionActor.cs(54,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVTestCaptionActor.cs(54,19): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVTestCaptionActor.cs(69,18): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVTestCaptionActor.cs(69,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVTestCaptionActor.cs(69,19): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestCaptionActor.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVTestCaptionActor.cs"
+
+------------------------
+
+39/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\text.tcl" -o "AVtext.cs" -xmldir "C:\Acti
+viz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\text.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVtext.cs C:\Activiz\trunk\ActiV
+izDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDotNe
+t\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+CS Compiled = 0
+
+cmake.exe -E copy "AVtext.cs" "Converted CSharp Tests 2008-6-3_10.16.26/Compilin
+g"
+
+cmake.exe -E remove "AVtext.cs"
+
+------------------------
+
+40/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\xyPlot.tcl" -o "AVxyPlot.cs" -xmldir "C:\
+Activiz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\xyPlot.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVxyPlot.cs C:\Activiz\trunk\Act
+iVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDot
+Net\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVxyPlot.cs(95,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(95,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(95,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot.cs(118,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(118,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(118,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot.cs(140,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot.cs(140,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot.cs(140,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVxyPlot.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotCom
+piling"
+
+cmake.exe -E remove "AVxyPlot.cs"
+
+------------------------
+
+41/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\xyPlot2.tcl" -o "AVxyPlot2.cs" -xmldir "C
+:\Activiz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\xyPlot2.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVxyPlot2.cs C:\Activiz\trunk\Ac
+tiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDo
+tNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVxyPlot2.cs(108,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot2.cs(108,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot2.cs(108,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot2.cs(145,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot2.cs(145,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot2.cs(145,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot2.cs(189,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot2.cs(189,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot2.cs(189,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVxyPlot2.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotCo
+mpiling"
+
+cmake.exe -E remove "AVxyPlot2.cs"
+
+------------------------
+
+42/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\xyPlot3.tcl" -o "AVxyPlot3.cs" -xmldir "C
+:\Activiz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\xyPlot3.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVxyPlot3.cs C:\Activiz\trunk\Ac
+tiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDo
+tNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVxyPlot3.cs(113,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot3.cs(113,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot3.cs(113,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot3.cs(162,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot3.cs(162,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot3.cs(162,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVxyPlot3.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotCo
+mpiling"
+
+cmake.exe -E remove "AVxyPlot3.cs"
+
+------------------------
+
+43/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Hybrid\Testing\Tcl\xyPlot4.tcl" -o "AVxyPlot4.cs" -xmldir "C
+:\Activiz Build\xml"
+
+Converting C:\VTK\Hybrid\Testing\Tcl\xyPlot4.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVxyPlot4.cs C:\Activiz\trunk\Ac
+tiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizDo
+tNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVxyPlot4.cs(112,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot4.cs(112,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot4.cs(112,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot4.cs(149,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot4.cs(149,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot4.cs(149,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+AVxyPlot4.cs(184,18): error CS0030: Cannot convert type 'double[]' to 'double'
+AVxyPlot4.cs(184,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkTextProperty.SetColor(ref double)' has some invalid
+        arguments
+AVxyPlot4.cs(184,19): error CS1620: Argument '1' must be passed with the 'ref'
+        keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVxyPlot4.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotCo
+mpiling"
+
+cmake.exe -E remove "AVxyPlot4.cs"
+
+------------------------
+
+44/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\IO\Testing\Tcl\Plot3DScalars.tcl" -o "AVPlot3DScalars.cs" -x
+mldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\IO\Testing\Tcl\Plot3DScalars.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVPlot3DScalars.cs C:\Activiz\tr
+unk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activi
+z\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Act
+ivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVPlot3DScalars.cs(54,58): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVPlot3DScalars.cs(54,7): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVPlot3DScalars.cs(54,59): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVPlot3DScalars.cs(61,11): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DScalars.cs(65,56): error CS0030: Cannot convert type 'int' to 'string'
+AVPlot3DScalars.cs(70,11): error CS0029: Cannot implicitly convert type 'string'
+        to 'bool'
+AVPlot3DScalars.cs(72,15): error CS1061: 'System.Array' does not contain a
+        definition for 'en' and no extension method 'en' accepting a first
+        argument of type 'System.Array' could be found (are you missing a using
+        directive or an assembly reference?)
+AVPlot3DScalars.cs(113,21): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVPlot3DScalars.cs(113,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetPosition(ref double)' has some invalid
+        arguments
+AVPlot3DScalars.cs(113,22): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVPlot3DScalars.cs(114,23): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVPlot3DScalars.cs(114,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetFocalPoint(ref double)' has some invalid
+        arguments
+AVPlot3DScalars.cs(114,24): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVPlot3DScalars.cs(115,7): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DScalars.cs(116,7): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DScalars.cs(117,7): error CS0103: The name 'n' does not exist in the
+        current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVPlot3DScalars.cs" "Converted CSharp Tests 2008-6-3_10.16.26
+/NotCompiling"
+
+cmake.exe -E remove "AVPlot3DScalars.cs"
+
+------------------------
+
+45/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\IO\Testing\Tcl\Plot3DVectors.tcl" -o "AVPlot3DVectors.cs" -x
+mldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\IO\Testing\Tcl\Plot3DVectors.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVPlot3DVectors.cs C:\Activiz\tr
+unk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activi
+z\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Act
+ivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVPlot3DVectors.cs(66,11): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DVectors.cs(69,56): error CS0030: Cannot convert type 'int' to 'string'
+AVPlot3DVectors.cs(74,11): error CS0029: Cannot implicitly convert type 'string'
+        to 'bool'
+AVPlot3DVectors.cs(76,15): error CS1061: 'System.Array' does not contain a
+        definition for 'ren' and no extension method 'ren' accepting a first
+        argument of type 'System.Array' could be found (are you missing a using
+        directive or an assembly reference?)
+AVPlot3DVectors.cs(111,21): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVPlot3DVectors.cs(111,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetPosition(ref double)' has some invalid
+        arguments
+AVPlot3DVectors.cs(111,22): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVPlot3DVectors.cs(112,23): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVPlot3DVectors.cs(112,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkLight.SetFocalPoint(ref double)' has some invalid
+        arguments
+AVPlot3DVectors.cs(112,24): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVPlot3DVectors.cs(113,7): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DVectors.cs(114,7): error CS0103: The name 'Win' does not exist in the
+        current context
+AVPlot3DVectors.cs(115,7): error CS0103: The name 'n' does not exist in the
+        current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVPlot3DVectors.cs" "Converted CSharp Tests 2008-6-3_10.16.26
+/NotCompiling"
+
+cmake.exe -E remove "AVPlot3DVectors.cs"
+
+------------------------
+
+46/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\IO\Testing\Tcl\TestImageWriters.tcl" -o "AVTestImageWriters.
+cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\IO\Testing\Tcl\TestImageWriters.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestImageWriters.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestImageWriters.cs(36,20): error CS0030: Cannot convert type 'int[]' to 'int'
+AVTestImageWriters.cs(36,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkImageData.SetDimensions(ref int)' has some invalid
+        arguments
+AVTestImageWriters.cs(36,21): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVTestImageWriters.cs(37,16): error CS0030: Cannot convert type 'int[]' to 'int'
+AVTestImageWriters.cs(37,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkImageData.SetExtent(ref int)' has some invalid arguments
+AVTestImageWriters.cs(37,17): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+AVTestImageWriters.cs(47,28): error CS0103: The name 'source' does not exist in
+        the current context
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestImageWriters.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVTestImageWriters.cs"
+
+------------------------
+
+47/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\IO\Testing\Tcl\TestPolygonWriters.tcl" -o "AVTestPolygonWrit
+ers.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\IO\Testing\Tcl\TestPolygonWriters.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestPolygonWriters.cs C:\Activ
+iz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\A
+ctiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trun
+k\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestPolygonWriters.cs(46,25): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVTestPolygonWriters.cs(46,3): error CS1502: The best overloaded method match
+        for 'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVTestPolygonWriters.cs(46,26): error CS1620: Argument '1' must be passed with
+        the 'ref' keyword
+AVTestPolygonWriters.cs(91,11): error CS0029: Cannot implicitly convert type
+        'string' to 'bool'
+AVTestPolygonWriters.cs(105,11): error CS0029: Cannot implicitly convert type
+        'string' to 'bool'
+AVTestPolygonWriters.cs(115,11): error CS0029: Cannot implicitly convert type
+        'string' to 'bool'
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestPolygonWriters.cs" "Converted CSharp Tests 2008-6-3_10.
+16.26/NotCompiling"
+
+cmake.exe -E remove "AVTestPolygonWriters.cs"
+
+------------------------
+
+48/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Imaging\Testing\Tcl\TestConvolve.tcl" -o "AVTestConvolve.cs"
+ -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Imaging\Testing\Tcl\TestConvolve.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestConvolve.cs C:\Activiz\tru
+nk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz
+\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Acti
+vizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestConvolve.cs(33,3): error CS1501: No overload for method 'SetKernel5x5'
+        takes '25' arguments
+Kitware.VTK.dll: (Location of symbol related to previous error)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestConvolve.cs" "Converted CSharp Tests 2008-6-3_10.16.26/
+NotCompiling"
+
+cmake.exe -E remove "AVTestConvolve.cs"
+
+------------------------
+
+49/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Parallel\Testing\Tcl\TestCutMaterial.tcl" -o "AVTestCutMater
+ial.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Parallel\Testing\Tcl\TestCutMaterial.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestCutMaterial.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestCutMaterial.cs(91,8): error CS0246: The type or namespace name
+        'vtkCutMaterial' could not be found (are you missing a using directive
+        or an assembly reference?)
+AVTestCutMaterial.cs(98,8): error CS0246: The type or namespace name 'None'
+        could not be found (are you missing a using directive or an assembly
+        reference?)
+AVTestCutMaterial.cs(259,23): error CS0246: The type or namespace name
+        'vtkCutMaterial' could not be found (are you missing a using directive
+        or an assembly reference?)
+AVTestCutMaterial.cs(265,35): error CS0246: The type or namespace name
+        'vtkCutMaterial' could not be found (are you missing a using directive
+        or an assembly reference?)
+AVTestCutMaterial.cs(343,23): error CS0246: The type or namespace name 'None'
+        could not be found (are you missing a using directive or an assembly
+        reference?)
+AVTestCutMaterial.cs(349,35): error CS0246: The type or namespace name 'None'
+        could not be found (are you missing a using directive or an assembly
+        reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestCutMaterial.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVTestCutMaterial.cs"
+
+------------------------
+
+50/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Parallel\Testing\Tcl\TestExtractVOI.tcl" -o "AVTestExtractVO
+I.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Parallel\Testing\Tcl\TestExtractVOI.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestExtractVOI.cs C:\Activiz\t
+runk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activ
+iz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Ac
+tivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestExtractVOI.cs(70,8): error CS0246: The type or namespace name
+        'vtkRTAnalyticSource' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtractVOI.cs(143,23): error CS0246: The type or namespace name
+        'vtkRTAnalyticSource' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtractVOI.cs(149,34): error CS0246: The type or namespace name
+        'vtkRTAnalyticSource' could not be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestExtractVOI.cs" "Converted CSharp Tests 2008-6-3_10.16.2
+6/NotCompiling"
+
+cmake.exe -E remove "AVTestExtractVOI.cs"
+
+------------------------
+
+51/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Parallel\Testing\Tcl\TestExtrudePiece.tcl" -o "AVTestExtrude
+Piece.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Parallel\Testing\Tcl\TestExtrudePiece.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestExtrudePiece.cs C:\Activiz
+\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Act
+iviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\
+ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestExtrudePiece.cs(72,8): error CS0246: The type or namespace name
+        'vtkExtractPolyDataPiece' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtrudePiece.cs(73,8): error CS0246: The type or namespace name
+        'vtkPLinearExtrusionFilter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtrudePiece.cs(132,23): error CS0246: The type or namespace name
+        'vtkExtractPolyDataPiece' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtrudePiece.cs(138,37): error CS0246: The type or namespace name
+        'vtkExtractPolyDataPiece' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtrudePiece.cs(144,23): error CS0246: The type or namespace name
+        'vtkPLinearExtrusionFilter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestExtrudePiece.cs(150,39): error CS0246: The type or namespace name
+        'vtkPLinearExtrusionFilter' could not be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestExtrudePiece.cs" "Converted CSharp Tests 2008-6-3_10.16
+.26/NotCompiling"
+
+cmake.exe -E remove "AVTestExtrudePiece.cs"
+
+------------------------
+
+52/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Parallel\Testing\Tcl\TestImageStreamer.tcl" -o "AVTestImageS
+treamer.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Parallel\Testing\Tcl\TestImageStreamer.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestImageStreamer.cs C:\Activi
+z\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Ac
+tiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestImageStreamer.cs(72,8): error CS0246: The type or namespace name
+        'vtkMemoryLimitImageDataStreamer' could not be found (are you missing a
+        using directive or an assembly reference?)
+AVTestImageStreamer.cs(207,23): error CS0246: The type or namespace name
+        'vtkMemoryLimitImageDataStreamer' could not be found (are you missing a
+        using directive or an assembly reference?)
+AVTestImageStreamer.cs(213,40): error CS0246: The type or namespace name
+        'vtkMemoryLimitImageDataStreamer' could not be found (are you missing a
+        using directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestImageStreamer.cs" "Converted CSharp Tests 2008-6-3_10.1
+6.26/NotCompiling"
+
+cmake.exe -E remove "AVTestImageStreamer.cs"
+
+------------------------
+
+53/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Parallel\Testing\Tcl\TestPDataSetReaderGrid.tcl" -o "AVTestP
+DataSetReaderGrid.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Parallel\Testing\Tcl\TestPDataSetReaderGrid.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestPDataSetReaderGrid.cs C:\A
+ctiviz\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:
+C:\Activiz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\
+trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestPDataSetReaderGrid.cs(164,8): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(165,8): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(170,8): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(171,8): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(176,8): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(177,8): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(280,23): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(286,38): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(292,23): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(298,39): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(352,23): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(358,39): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(364,23): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(370,40): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(424,23): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(430,39): error CS0246: The type or namespace name
+        'vtkPDataSetWriter' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(436,23): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+AVTestPDataSetReaderGrid.cs(442,40): error CS0246: The type or namespace name
+        'vtkPDataSetReader' could not be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestPDataSetReaderGrid.cs" "Converted CSharp Tests 2008-6-3
+_10.16.26/NotCompiling"
+
+cmake.exe -E remove "AVTestPDataSetReaderGrid.cs"
+
+------------------------
+
+54/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Rendering\Testing\Tcl\ScalarBar.tcl" -o "AVScalarBar.cs" -xm
+ldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Rendering\Testing\Tcl\ScalarBar.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVScalarBar.cs C:\Activiz\trunk\
+ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tr
+unk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activiz
+DotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVScalarBar.cs(33,34): error CS1525: Invalid expression term 'void'
+AVScalarBar.cs(33,40): error CS1026: ) expected
+AVScalarBar.cs(33,50): error CS1002: ; expected
+AVScalarBar.cs(33,50): error CS1525: Invalid expression term ')'
+AVScalarBar.cs(101,24): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVScalarBar.cs(112,57): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVScalarBar.cs(176,21): error CS0266: Cannot implicitly convert type 'object' to
+        'Kitware.VTK.vtkDataObject'. An explicit conversion exists (are you
+        missing a cast?)
+AVScalarBar.cs(188,22): error CS0266: Cannot implicitly convert type 'object' to
+        'Kitware.VTK.vtkDataSet'. An explicit conversion exists (are you missing
+        a cast?)
+AVScalarBar.cs(224,24): error CS0266: Cannot implicitly convert type 'object' to
+        'int'. An explicit conversion exists (are you missing a cast?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVScalarBar.cs" "Converted CSharp Tests 2008-6-3_10.16.26/Not
+Compiling"
+
+cmake.exe -E remove "AVScalarBar.cs"
+
+------------------------
+
+55/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Rendering\Testing\Tcl\TestTiling.tcl" -o "AVTestTiling.cs" -
+xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Rendering\Testing\Tcl\TestTiling.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVTestTiling.cs C:\Activiz\trunk
+\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\t
+runk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\Activi
+zDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVTestTiling.cs(33,34): error CS1525: Invalid expression term 'void'
+AVTestTiling.cs(33,40): error CS1026: ) expected
+AVTestTiling.cs(33,50): error CS1002: ; expected
+AVTestTiling.cs(33,50): error CS1525: Invalid expression term ')'
+AVTestTiling.cs(133,24): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVTestTiling.cs(144,57): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVTestTiling.cs(208,21): error CS0266: Cannot implicitly convert type 'object'
+        to 'Kitware.VTK.vtkDataObject'. An explicit conversion exists (are you
+        missing a cast?)
+AVTestTiling.cs(220,22): error CS0266: Cannot implicitly convert type 'object'
+        to 'Kitware.VTK.vtkDataSet'. An explicit conversion exists (are you
+        missing a cast?)
+AVTestTiling.cs(256,24): error CS0266: Cannot implicitly convert type 'object'
+        to 'int'. An explicit conversion exists (are you missing a cast?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVTestTiling.cs" "Converted CSharp Tests 2008-6-3_10.16.26/No
+tCompiling"
+
+cmake.exe -E remove "AVTestTiling.cs"
+
+------------------------
+
+56/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Rendering\Testing\Tcl\labeledContours.tcl" -o "AVlabeledCont
+ours.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Rendering\Testing\Tcl\labeledContours.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVlabeledContours.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVlabeledContours.cs(47,28): error CS0030: Cannot convert type 'double[]' to
+        'double'
+AVlabeledContours.cs(47,3): error CS1502: The best overloaded method match for
+        'Kitware.VTK.vtkMapper.SetScalarRange(ref double)' has some invalid
+        arguments
+AVlabeledContours.cs(47,29): error CS1620: Argument '1' must be passed with the
+        'ref' keyword
+CS Compiled = 1
+
+cmake.exe -E copy "AVlabeledContours.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVlabeledContours.cs"
+
+------------------------
+
+57/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Rendering\Testing\Tcl\volRCRotateClip.tcl" -o "AVvolRCRotate
+Clip.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Rendering\Testing\Tcl\volRCRotateClip.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVvolRCRotateClip.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVvolRCRotateClip.cs(70,34): error CS1525: Invalid expression term 'void'
+AVvolRCRotateClip.cs(70,40): error CS1026: ) expected
+AVvolRCRotateClip.cs(70,50): error CS1002: ; expected
+AVvolRCRotateClip.cs(70,50): error CS1525: Invalid expression term ')'
+AVvolRCRotateClip.cs(164,24): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolRCRotateClip.cs(175,57): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVvolRCRotateClip.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVvolRCRotateClip.cs"
+
+------------------------
+
+58/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\Rendering\Testing\Tcl\volTM2DRotateClip.tcl" -o "AVvolTM2DRo
+tateClip.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\Rendering\Testing\Tcl\volTM2DRotateClip.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVvolTM2DRotateClip.cs C:\Activi
+z\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Ac
+tiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVvolTM2DRotateClip.cs(67,34): error CS1525: Invalid expression term 'void'
+AVvolTM2DRotateClip.cs(67,40): error CS1026: ) expected
+AVvolTM2DRotateClip.cs(67,50): error CS1002: ; expected
+AVvolTM2DRotateClip.cs(67,50): error CS1525: Invalid expression term ')'
+AVvolTM2DRotateClip.cs(160,24): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolTM2DRotateClip.cs(171,57): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVvolTM2DRotateClip.cs" "Converted CSharp Tests 2008-6-3_10.1
+6.26/NotCompiling"
+
+cmake.exe -E remove "AVvolTM2DRotateClip.cs"
+
+------------------------
+
+59/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\VolumeRendering\Testing\Tcl\cursor3D.tcl" -o "AVcursor3D.cs"
+ -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\VolumeRendering\Testing\Tcl\cursor3D.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVcursor3D.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVcursor3D.cs(154,40): error CS1061: 'object' does not contain a definition for
+        'GetZSlice' and no extension method 'GetZSlice' accepting a first
+        argument of type 'object' could be found (are you missing a using
+        directive or an assembly reference?)
+AVcursor3D.cs(162,40): error CS1061: 'object' does not contain a definition for
+        'GetZSlice' and no extension method 'GetZSlice' accepting a first
+        argument of type 'object' could be found (are you missing a using
+        directive or an assembly reference?)
+AVcursor3D.cs(171,14): error CS1061: 'object' does not contain a definition for
+        'SetZSlice' and no extension method 'SetZSlice' accepting a first
+        argument of type 'object' could be found (are you missing a using
+        directive or an assembly reference?)
+AVcursor3D.cs(172,7): error CS0103: The name 'slice_label' does not exist in the
+        current context
+AVcursor3D.cs(172,30): error CS0103: The name 'text' does not exist in the
+        current context
+AVcursor3D.cs(173,14): error CS1061: 'object' does not contain a definition for
+        'Render' and no extension method 'Render' accepting a first argument of
+        type 'object' could be found (are you missing a using directive or an
+        assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVcursor3D.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVcursor3D.cs"
+
+------------------------
+
+60/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\VolumeRendering\Testing\Tcl\gaussian.tcl" -o "AVgaussian.cs"
+ -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\VolumeRendering\Testing\Tcl\gaussian.tcl
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVgaussian.cs C:\Activiz\trunk\A
+ctiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Activiz\tru
+nk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\ActivizD
+otNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVgaussian.cs(43,11): error CS0029: Cannot implicitly convert type 'double[]' to
+        'System.IntPtr'
+AVgaussian.cs(64,34): error CS1061: 'Kitware.VTK.vtkScalarsToColors' does not
+        contain a definition for 'SetHueRange' and no extension method
+        'SetHueRange' accepting a first argument of type
+        'Kitware.VTK.vtkScalarsToColors' could be found (are you missing a using
+        directive or an assembly reference?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVgaussian.cs" "Converted CSharp Tests 2008-6-3_10.16.26/NotC
+ompiling"
+
+cmake.exe -E remove "AVgaussian.cs"
+
+------------------------
+
+61/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\VolumeRendering\Testing\Tcl\volRCRotateClip.tcl" -o "AVvolRC
+RotateClip.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\VolumeRendering\Testing\Tcl\volRCRotateClip.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVvolRCRotateClip.cs C:\Activiz\
+trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Acti
+viz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk\A
+ctivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVvolRCRotateClip.cs(71,34): error CS1525: Invalid expression term 'void'
+AVvolRCRotateClip.cs(71,40): error CS1026: ) expected
+AVvolRCRotateClip.cs(71,50): error CS1002: ; expected
+AVvolRCRotateClip.cs(71,50): error CS1525: Invalid expression term ')'
+AVvolRCRotateClip.cs(166,24): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolRCRotateClip.cs(177,57): error CS1061: 'Kitware.VTK.vtkDataObject' does not
+        contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolRCRotateClip.cs(337,21): error CS0266: Cannot implicitly convert type
+        'object' to 'Kitware.VTK.vtkDataObject'. An explicit conversion exists
+        (are you missing a cast?)
+AVvolRCRotateClip.cs(349,22): error CS0266: Cannot implicitly convert type
+        'object' to 'Kitware.VTK.vtkDataSet'. An explicit conversion exists (are
+        you missing a cast?)
+AVvolRCRotateClip.cs(385,24): error CS0266: Cannot implicitly convert type
+        'object' to 'int'. An explicit conversion exists (are you missing a
+        cast?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVvolRCRotateClip.cs" "Converted CSharp Tests 2008-6-3_10.16.
+26/NotCompiling"
+
+cmake.exe -E remove "AVvolRCRotateClip.cs"
+
+------------------------
+
+62/59
+
+------------------------------
+
+python.exe "C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript\vtkTclToCsConve
+rtor.py" -i "C:\VTK\VolumeRendering\Testing\Tcl\volTM2DRotateClip.tcl" -o "AVvol
+TM2DRotateClip.cs" -xmldir "C:\Activiz Build\xml"
+
+Converting C:\VTK\VolumeRendering\Testing\Tcl\volTM2DRotateClip.tcl
+
+*************
+WARNING: A method called had no type in the xml files, replaced with Object
+*************
+Python Compiled = 0
+
+Compiling
+
+C:\Activiz\trunk\ActiVizDotNet\Testing\TclToCsScript
+C:\WINDOWS\Microsoft.NET\Framework\v3.5\csc.exe AVvolTM2DRotateClip.cs C:\Activi
+z\trunk\ActiVizDotNet\Testing\TclToCsScript\csharptestdriver.cs /reference:C:\Ac
+tiviz\trunk\ActivizDotNet\Testing\TclToCsScript\Kitware.VTK.dll;C:\Activiz\trunk
+\ActivizDotNet\Testing\TclToCsScript\Kitware.mummy.runtime.dll
+
+Microsoft (R) Visual C# 2008 Compiler version 3.5.21022.8
+for Microsoft (R) .NET Framework version 3.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+AVvolTM2DRotateClip.cs(68,34): error CS1525: Invalid expression term 'void'
+AVvolTM2DRotateClip.cs(68,40): error CS1026: ) expected
+AVvolTM2DRotateClip.cs(68,50): error CS1002: ; expected
+AVvolTM2DRotateClip.cs(68,50): error CS1525: Invalid expression term ')'
+AVvolTM2DRotateClip.cs(164,24): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetNumberOfCells' and no extension method
+        'GetNumberOfCells' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolTM2DRotateClip.cs(175,57): error CS1061: 'Kitware.VTK.vtkDataObject' does
+        not contain a definition for 'GetCellData' and no extension method
+        'GetCellData' accepting a first argument of type
+        'Kitware.VTK.vtkDataObject' could be found (are you missing a using
+        directive or an assembly reference?)
+AVvolTM2DRotateClip.cs(323,21): error CS0266: Cannot implicitly convert type
+        'object' to 'Kitware.VTK.vtkDataObject'. An explicit conversion exists
+        (are you missing a cast?)
+AVvolTM2DRotateClip.cs(335,22): error CS0266: Cannot implicitly convert type
+        'object' to 'Kitware.VTK.vtkDataSet'. An explicit conversion exists (are
+        you missing a cast?)
+AVvolTM2DRotateClip.cs(371,24): error CS0266: Cannot implicitly convert type
+        'object' to 'int'. An explicit conversion exists (are you missing a
+        cast?)
+CS Compiled = 1
+
+cmake.exe -E copy "AVvolTM2DRotateClip.cs" "Converted CSharp Tests 2008-6-3_10.1
+6.26/NotCompiling"
+
+cmake.exe -E remove "AVvolTM2DRotateClip.cs"
+
+------------------------
+
+
+
+  There were 59 tests
+  1 - 1% Compile
+  61 - 103% Do Not Compile
+  0 - 0% Are Not Translatable
+
+

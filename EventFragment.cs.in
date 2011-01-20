@@ -1,0 +1,36 @@
+   private vtkObjectEventRelay @event_name@Relay;
+
+   /// <summary>
+   /// The @event_name@ event is invoked when the sender's InvokeEvent method
+   /// is called with vtkCommand.EventIds.@event_basename@Event
+   /// as the eventId parameter.
+   /// </summary>
+   public event Kitware.VTK.vtkObject.vtkObjectEventHandler @event_name@
+   {
+      add
+      {
+         if (null == this.@event_name@Relay)
+         {
+            this.@event_name@Relay = new vtkObjectEventRelay(this,
+               (uint) vtkCommand.EventIds.@event_basename@Event);
+         }
+
+         if (null != this.@event_name@Relay)
+         {
+            this.@event_name@Relay.AddHandler(value);
+         }
+      }
+
+      remove
+      {
+         if (null != this.@event_name@Relay)
+         {
+            this.@event_name@Relay.RemoveHandler(value);
+
+            if (!this.@event_name@Relay.HasHandlers())
+            {
+               this.@event_name@Relay = null;
+            }
+         }
+      }
+   }

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CubeAxes", "CubeAxes.vbproj", "{A6E6382D-E06B-4095-9DF8-1CC6E4BCBEDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|@AVDN_PLATFORM@ = Debug|@AVDN_PLATFORM@
+		Release|@AVDN_PLATFORM@ = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E6382D-E06B-4095-9DF8-1CC6E4BCBEDA}.Debug|@AVDN_PLATFORM@.ActiveCfg = Debug|@AVDN_PLATFORM@
+		{A6E6382D-E06B-4095-9DF8-1CC6E4BCBEDA}.Debug|@AVDN_PLATFORM@.Build.0 = Debug|@AVDN_PLATFORM@
+		{A6E6382D-E06B-4095-9DF8-1CC6E4BCBEDA}.Release|@AVDN_PLATFORM@.ActiveCfg = Release|@AVDN_PLATFORM@
+		{A6E6382D-E06B-4095-9DF8-1CC6E4BCBEDA}.Release|@AVDN_PLATFORM@.Build.0 = Release|@AVDN_PLATFORM@
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

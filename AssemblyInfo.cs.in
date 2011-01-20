@@ -1,0 +1,33 @@
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("Kitware.VTK")]
+[assembly: AssemblyDescription("ActiViz.NET @AVDN_EDITION@ Edition - the scientific data visualization power of VTK harnessed for C#, VB.NET or any other .NET Framework language.")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Kitware, Inc.")]
+[assembly: AssemblyProduct("@AVDN_FULL_VERSION_STRING@")]
+[assembly: AssemblyCopyright("Copyright ©2006-2008 Kitware, Inc. All rights reserved.")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(true)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("9120153c-c063-4302-86f4-14dbf4507ae3")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+[assembly: AssemblyVersion("@AVDN_MAJOR_VERSION@.@AVDN_MINOR_VERSION@.@AVDN_BUILD_VERSION@.@AVDN_VERSION_SVN_REVISION@")]
+[assembly: AssemblyFileVersion("@AVDN_MAJOR_VERSION@.@AVDN_MINOR_VERSION@.@AVDN_BUILD_VERSION@.@AVDN_VERSION_SVN_REVISION@")]

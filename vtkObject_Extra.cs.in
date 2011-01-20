@@ -1,0 +1,407 @@
+  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObject_Print")]
+  static extern string vtkObject_Print(HandleRef pThis);
+
+  /// <summary>
+  /// Returns the result of calling vtkObject::Print as a C# string.
+  /// </summary>
+  public override string ToString()
+  {
+    string rv = vtkObject_Print(this.GetCppThis());
+    return rv;
+  }
+
+
+  /// <summary>
+  /// Generic signature for all vtkObject events.
+  /// </summary>
+  public delegate void vtkObjectEventHandler(vtkObject sender, vtkObjectEventArgs e);
+
+
+@vtkObject_EventFragments_CODE@  /// <summary>
+  /// Call RemoveAllHandlers on each non-null vtkObjectEventRelay.
+  /// TODO: This method needs to get called by the generated Dispose.
+  /// Make that happen...
+  /// </summary>
+  public void RemoveAllHandlersForAllEvents()
+  {
+@vtkObject_RemoveEvents_CODE@  }
+
+
+} // End class vtkObject
+
+
+
+
+//----------------------------------------------------------------------------
+/// <summary>
+/// The sender of each ActiViz.NET event passes itself as its "sender"
+/// parameter and an instance of vtkObjectEventArgs as its "e" parameter.
+/// </summary>
+public class vtkObjectEventArgs : System.EventArgs
+{
+  /// <summary>
+  /// Each ActiViz.NET event automatically constructs a vtkObjectEventArgs to
+  /// pass to its handlers. Client ActiViz.NET applications do not need to
+  /// call this vtkObjectEventArgs constructor.
+  /// </summary>
+  public vtkObjectEventArgs(Kitware.VTK.vtkObject caller, uint eventId, IntPtr callData)
+  {
+    this.m_Caller = caller;
+    this.m_EventId = eventId;
+    this.m_CallData = callData;
+  }
+
+
+  /// <summary>
+  /// Caller is the object that invoked the event. Usually it is the same
+  /// object as the event handler's "sender" parameter.
+  /// </summary>
+  public Kitware.VTK.vtkObject Caller
+  {
+    get
+    {
+      return this.m_Caller;
+    }
+  }
+
+
+  /// <summary>
+  /// EventId is usually a value in the vtkCommand.EventIds enum. It is
+  /// primarily useful for handlers of the "Any" event. The "Any" event
+  /// fires whenever any other event is invoked from a given vtkObject. In
+  /// that case, the EventId passed with the event indicates the actual
+  /// event that was invoked.
+  ///
+  /// It is also useful in the case of user defined events, where the event
+  /// id value is outside the pre-defined range of vtkCommand.EventIds.
+  /// </summary>
+  public uint EventId
+  {
+    get
+    {
+      return this.m_EventId;
+    }
+  }
+
+
+  /// <summary>
+  /// CallData varies based on what event is firing. It is frequently
+  /// IntPtr.Zero (NULL from C++)... If non-zero, see the documentation
+  /// of the specific event for the type of the data.
+  /// </summary>
+  public IntPtr CallData
+  {
+    get
+    {
+      return this.m_CallData;
+    }
+  }
+
+
+  private Kitware.VTK.vtkObject m_Caller;
+  private uint m_EventId;
+  private IntPtr m_CallData;
+
+
+} // End class vtkObjectEventArgs
+
+
+
+
+//----------------------------------------------------------------------------
+/// <summary>
+/// Implement a relay handler for VTK events. This is a class
+/// that receives events directly from the VTK object sender and
+/// transforms them into calls to .NET delegates.
+/// </summary>
+public class vtkObjectEventRelay : WrappedObject
+{
+   /// <summary>
+   /// Type registration mechanics.
+   /// </summary>
+   public new static readonly string MRClassNameKey = "class vtkObjectEventRelay";
+
+   /// <summary>
+   /// Type registration mechanics.
+   /// </summary>
+   public new const string MRFullTypeName = "Kitware.VTK.vtkObjectEventRelay";
+
+   /// <summary>
+   /// Type registration mechanics.
+   /// </summary>
+   static vtkObjectEventRelay()
+   {
+      Kitware.mummy.Runtime.Methods.RegisterType(
+         System.Reflection.Assembly.GetExecutingAssembly(),
+         MRClassNameKey,
+         System.Type.GetType(MRFullTypeName)
+         );
+   }
+
+
+   /// <summary>
+   /// Automatically generated constructor - called from generated code.
+   /// DO NOT call directly.
+   /// </summary>
+   public vtkObjectEventRelay(IntPtr rawCppThis, bool callDisposalMethod, bool strong) :
+      base(rawCppThis, callDisposalMethod, strong)
+   {
+   }
+
+
+   [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_New")]
+   internal static extern IntPtr vtkObjectEventRelay_New(ref uint mteStatus, ref uint mteIndex, ref uint rawRefCount);
+
+  /// <summary>
+  /// Construct a vtkObjectEventRelay object that will call "handler" when its
+  /// Execute method gets called. Typically, it is not necessary to create
+  /// instances of vtkObjectEventRelay from client applications. Usually, clients
+  /// will just connect to ActiViz.NET events, which use vtkObjectEventRelay
+  /// internally. However, vtkObjectEventRelay is suitable for use as the
+  /// vtkCommand parameter to AddObserver calls.
+  /// </summary>
+   public vtkObjectEventRelay(Kitware.VTK.vtkObject sender, uint eventId)
+      : base(IntPtr.Zero, true, false)
+   {
+      // mummy generated default C# constructor
+      uint mteStatus = 0;
+      uint mteIndex = UInt32.MaxValue;
+      uint rawRefCount = 0;
+
+      IntPtr rawCppThis = vtkObjectEventRelay_New(ref mteStatus, ref mteIndex, ref rawRefCount);
+      this.SetCppThis(rawCppThis, true, (0==mteStatus || rawRefCount<2 ? false : true));
+
+      this.Sender = sender;
+      this.EventId = eventId;
+   }
+
+
+   [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_Delete")]
+   internal static extern void vtkObjectEventRelay_Delete(HandleRef pThis);
+
+   /// <summary>
+   /// Automatically generated protected Dispose method - called from
+   /// public Dispose or the C# destructor. DO NOT call directly.
+   /// </summary>
+   protected override void Dispose(bool disposing)
+   {
+      try
+      {
+         if (this.GetCallDisposalMethod())
+         {
+            vtkObjectEventRelay_Delete(this.GetCppThis());
+            this.ClearCppThis();
+         }
+      }
+      finally
+      {
+         base.Dispose(disposing);
+      }
+   }
+
+
+  private Kitware.VTK.vtkObject Sender;
+  private uint EventId;
+  private Kitware.VTK.vtkObject.vtkObjectEventHandler EventImpl;
+  private uint ObserverId;
+
+
+  /// <summary>
+  /// Signature for method that vtkObject can call for VTK events.
+  /// </summary>
+  public delegate void RelayHandler(
+    IntPtr caller, uint eventId, IntPtr callData);
+  private RelayHandler RelayHandlerDelegate;
+
+  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_AddObserver")]
+  internal static extern uint vtkObjectEventRelay_AddObserver(
+    HandleRef pThis, HandleRef sender, uint eventid, RelayHandler handler, float priority);
+
+  private uint AddObserver()
+  {
+    if (null == this.RelayHandlerDelegate)
+    {
+      this.RelayHandlerDelegate = new RelayHandler(this.Execute);
+    }
+    uint rv = vtkObjectEventRelay_AddObserver(this.GetCppThis(),
+      this.Sender == null ? new HandleRef() : this.Sender.GetCppThis(),
+      this.EventId, this.RelayHandlerDelegate, 0.0f);
+    return rv;
+  }
+
+
+  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_RemoveObserver")]
+  internal static extern uint vtkObjectEventRelay_RemoveObserver(
+    HandleRef pThis, uint observerId);
+
+  private void RemoveObserver(uint observerId)
+  {
+    vtkObjectEventRelay_RemoveObserver(this.GetCppThis(), observerId);
+  }
+
+
+  private void CallAddObserver()
+  {
+    if (0 == this.ObserverId && null != this.Sender && IntPtr.Zero != this.Sender.GetCppThis().Handle)
+    {
+      this.ObserverId = this.AddObserver();
+    }
+  }
+
+
+  private void CallRemoveObserver()
+  {
+    if (0 != this.ObserverId && null != this.Sender && IntPtr.Zero != this.Sender.GetCppThis().Handle)
+    {
+      this.RemoveObserver(this.ObserverId);
+      this.ObserverId = 0;
+    }
+  }
+
+
+  /// <summary>
+  /// Do not call directly. This method is called from VTK library code when
+  /// InvokeEvent is called on a vtkObject.
+  /// </summary>
+  public void Execute(
+    IntPtr caller, uint eventId, IntPtr callData)
+  {
+    if (null != this.EventImpl)
+    {
+      // "Create" the object via the mummy Runtime method:
+      //
+      bool created;
+      vtkObject vo = (vtkObject) Kitware.mummy.Runtime.Methods.CreateWrappedObject(
+        0, System.UInt32.MaxValue, 0xFFFFFFA8, caller, true, out created);
+
+      this.EventImpl(this.Sender,
+        new vtkObjectEventArgs(vo, eventId, callData));
+    }
+  }
+
+
+  /// <summary>
+  /// AddHandler adds a managed/.NET event handler to this event relay object.
+  /// If this is the first time a handler is being added, we call AddObserver
+  /// so that the underlying VTK object will invoke the event from now on.
+  /// </summary>
+  public void AddHandler(Kitware.VTK.vtkObject.vtkObjectEventHandler handler)
+  {
+    if (null == this.EventImpl)
+    {
+      this.CallAddObserver();
+    }
+
+    this.EventImpl += handler;
+  }
+
+
+  /// <summary>
+  /// RemoveHandler removes a managed/.NET event handler previously added to
+  /// this event relay object.
+  /// If this is the last handler being removed, we call RemoveObserver
+  /// so that the underlying VTK object will no longer send the event to us.
+  /// </summary>
+  public void RemoveHandler(Kitware.VTK.vtkObject.vtkObjectEventHandler handler)
+  {
+    this.EventImpl -= handler;
+
+    if (null == this.EventImpl)
+    {
+      this.CallRemoveObserver();
+    }
+  }
+
+
+  /// <summary>
+  /// HasHandlers returns true if this event presently has any managed/.NET
+  /// handlers.
+  /// </summary>
+  public bool HasHandlers()
+  {
+    return (null != this.EventImpl);
+  }
+
+
+  /// <summary>
+  /// RemoveAllHandlers forcibly removes all existing handlers from its list.
+  /// Sender should call this method from its Dispose if it has one.
+  /// </summary>
+  public void RemoveAllHandlers()
+  {
+    this.CallRemoveObserver();
+    this.EventImpl = null;
+    this.Sender = null;
+  }
+
+
+} // End class vtkObjectEventRelay
+
+
+
+
+/// <summary>
+/// Custom marshaller for conversion to/from a System.IntPtr.
+/// </summary>
+public class vtkObjectMarshaler : ICustomMarshaler
+{
+  #region ICustomMarshaler Members
+
+  void ICustomMarshaler.CleanUpManagedData(object ManagedObj)
+  {
+    // Intentional no-op...
+  }
+
+
+  void ICustomMarshaler.CleanUpNativeData(IntPtr pNativeData)
+  {
+    // Intentional no-op...
+  }
+
+
+  int ICustomMarshaler.GetNativeDataSize()
+  {
+    return IntPtr.Size; // native data is just a C++ this pointer...
+  }
+
+
+  IntPtr ICustomMarshaler.MarshalManagedToNative(object ManagedObj)
+  {
+    return ((vtkObject)ManagedObj).GetCppThis().Handle;
+  }
+
+
+  object ICustomMarshaler.MarshalNativeToManaged(IntPtr pNativeData)
+  {
+    // "Create" the object via the mummy Runtime method:
+    //
+    bool created;
+    object o = Kitware.mummy.Runtime.Methods.CreateWrappedObject(
+      0, System.UInt32.MaxValue, 0xFFFFFFA8, pNativeData, true, out created);
+
+    if (o == null)
+    {
+      System.Console.Error.WriteLine("error: *DID NOT FIND* o in MarshalNativeToManaged");
+
+      // Since the object is not presently in the mummy Runtime table, we
+      // have no way of knowing its actual type. Just make a generic
+      // vtkObject and hope for the best?
+      //
+      o = new vtkObject(pNativeData, false, false);
+    }
+
+    return o;
+  }
+
+  #endregion
+
+
+  private static ICustomMarshaler TheInstance = new vtkObjectMarshaler();
+
+  /// <summary>
+  /// Get the custom marshaller for vtkObject objects.
+  /// </summary>
+  public static ICustomMarshaler GetInstance(String cookie)
+  {
+    return TheInstance;
+  }

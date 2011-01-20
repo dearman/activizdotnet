@@ -1,0 +1,40 @@
+using System;
+using System.Runtime.InteropServices; // DllImport and HandleRef both live here
+
+//----------------------------------------------------------------------------
+// The namespace name used here should match the _cable_::package value
+// listed in the gccxml input files...
+
+namespace @csharp_namespace@
+{
+  /// <summary>
+  /// Base class for all the mummy wrapped classes in @csharp_namespace@.
+  /// </summary>
+  public class WrappedObject : Kitware.mummy.Runtime.WrappedObject
+  {
+    //------------------------------------------------------------------------
+    // For each _cable_::group listed in any gccxml input file (the .cxx.in
+    // files that get configured and then sent through gccxml) there needs to
+    // be a const string variable here that names the export-layer dll from
+    // which a class's export layer functions are exported...
+    //
+    // For example, for a group = "vtkCommon" there needs to be a variable
+    // named vtkCommonEL_dll and its value needs to be the actual name of the
+    // dll file that it represents... (which is either @CMAKE_SHARED_LIBRARY_PREFIX@vtkEL@CMAKE_SHARED_LIBRARY_SUFFIX@ or
+    // @CMAKE_SHARED_LIBRARY_PREFIX@vtkCommonEL@CMAKE_SHARED_LIBRARY_SUFFIX@ depending on if you build one big export layer dll or
+    // one for each VTK kit...)
+    //------------------------------------------------------------------------
+
+    //------------------------------------------------------------------------
+
+@MV_EXPORTLAYER_DLL_VARIABLES@
+    //------------------------------------------------------------------------
+    /// <summary>
+    /// Constructor expected by the mummy Runtime.
+    /// </summary>
+    protected WrappedObject(IntPtr rawCppThis, bool callDisposalMethod, bool strong)
+      : base(rawCppThis, callDisposalMethod, strong)
+    {
+    }
+  }
+}
