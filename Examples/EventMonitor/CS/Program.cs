@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace ActiVizEventMonitor
+namespace EventMonitor
 {
   static class Program
   {

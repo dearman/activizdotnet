@@ -1,4 +1,4 @@
-﻿namespace ActiVizEventMonitor
+﻿namespace EventMonitor
 {
   partial class Form1
   {
@@ -122,4 +122,3 @@
     private System.Windows.Forms.Timer timer1;
   }
 }
-

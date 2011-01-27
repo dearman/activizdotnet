@@ -1,4 +1,4 @@
-ActiViz .NET Open Source Edition
+ActiViz .NET OpenSource Edition
 
 Copyright (c) 2006-2011 Kitware Inc.
 All rights reserved.

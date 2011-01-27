@@ -1,7 +1,4 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3 FATAL_ERROR)
-IF(COMMAND CMAKE_POLICY)
-  CMAKE_POLICY(SET CMP0003 NEW)
-ENDIF(COMMAND CMAKE_POLICY)
 PROJECT(ActiVizDotNet)
 
 
@@ -23,11 +20,11 @@ ENDIF(AVDN_BUILD_IS_TOP_LEVEL)
 
 
 # Make it clear that ActiViz is now open source: set the edition to
-# "Open Source" - the Commercial Edition is no longer for sale, but the
-# Open Source Edition is equivalent to it functionally. The Personal Edition
+# "OpenSource" - the Commercial Edition is no longer for sale, but the
+# OpenSource Edition is equivalent to it functionally. The Personal Edition
 # restrictions are nowhere to be found... :-)
 #
-SET(AVDN_EDITION "Open Source")
+SET(AVDN_EDITION "OpenSource")
 SET(AVDN_EDITION_SUFFIX "-OS")
 
 
@@ -331,7 +328,14 @@ ENDIF("${AVDN_SVN_STATUS}" STREQUAL "")
 
 # Pull in FindSubversion.cmake to get the Subversion_WC_INFO macro:
 #
-SET(AVDN_WC_LAST_CHANGED_REV "1")
+
+SET(AVDN_WC_LAST_CHANGED_REV "599")
+  #
+  # This value is an artificial number that is simply incremented manually
+  # now after switching to git from svn... Whenever we do "real packaging
+  # releases" this number should be incremented manually until this code
+  # is updated to reflect our shiny, new git repo-ness.
+
 IF(AVDN_SOURCE_TREE_IS_SVN_CHECKOUT)
   SET(Subversion_SVN_EXECUTABLE "${svn_EXECUTABLE}")
   FIND_PACKAGE(Subversion)
@@ -500,7 +504,7 @@ SET(vtkStringArray_EXTRA_DEPENDENCIES
 )
 
 
-MESSAGE(STATUS "Processing VTK_KITS_DIR='${VTK_KITS_DIR}'...")
+MESSAGE(STATUS "VTK_KITS_DIR='${VTK_KITS_DIR}'...")
 
 
 SET(gccxml_compiler "${CMAKE_CXX_COMPILER}")
@@ -812,9 +816,8 @@ IF(AVDN_DO_COPY_LIBRARIES_STEPS)
     )
   ENDIF(EXISTS "${bin_src_dir}/Kitware.mummy.Runtime.pdb")
 
-  # david.cole::fix -- TODO -- rename this CopyLibraries and eliminate
-  # the "other" CopyLibraries in the VE source tree... Putting it here
-  # and having the VE depend on ActiVizDotNet is sufficient...
+  # TODO -- eventually rename this CopyLibraries and eliminate
+  # the "other" CopyLibraries in other source trees...
   #
   ADD_CUSTOM_TARGET(
     Kitware.mummy.CopyLibraries2 ALL
@@ -913,8 +916,8 @@ IF(AVDN_DO_COPY_LIBRARIES_STEPS)
         )
       ENDIF(NOT WIN32)
 
-      # On Linux/Mac, VTK's *real* shared libs are named with ".so.5.4.0" (for example)
-      # at the end of the file name. The ".so" and ".so.5.4" files are symlinks to the
+      # On Linux/Mac, VTK's *real* shared libs are named with ".so.5.8.0" (for example)
+      # at the end of the file name. The ".so" and ".so.5.8" files are symlinks to the
       # real shared lib...
       #
       SET(vtk_sl_suffix "")
@@ -1016,7 +1019,7 @@ IF(MV_ONE_EXPORT_LAYER_DLL)
   ELSE(WIN32)
     TARGET_LINK_LIBRARIES(Kitware.VTK.Unmanaged "${exe_dir}/${CMAKE_SHARED_LIBRARY_PREFIX}Kitware.mummy.Runtime.Unmanaged${CMAKE_SHARED_LIBRARY_SUFFIX}")
   ENDIF(WIN32)
-  # david.cole::fix -- TODO -- rename this CopyLibraries here too...
+  # TODO -- rename this CopyLibraries here too...
   ADD_DEPENDENCIES(Kitware.VTK.Unmanaged Kitware.mummy.CopyLibraries2)
   FOREACH(kit ${kits})
     TARGET_LINK_LIBRARIES(Kitware.VTK.Unmanaged vtk${kit})
@@ -1034,7 +1037,7 @@ ELSE(MV_ONE_EXPORT_LAYER_DLL)
       TARGET_LINK_LIBRARIES(Kitware.VTK.vtk${kit}.Unmanaged "${exe_dir}/${CMAKE_SHARED_LIBRARY_PREFIX}Kitware.mummy.Runtime.Unmanaged${CMAKE_SHARED_LIBRARY_SUFFIX}")
     ENDIF(WIN32)
     TARGET_LINK_LIBRARIES(Kitware.VTK.vtk${kit}.Unmanaged vtk${kit})
-    # david.cole::fix -- TODO -- rename this CopyLibraries here too...
+    # TODO -- rename this CopyLibraries here too...
     ADD_DEPENDENCIES(Kitware.VTK.vtk${kit}.Unmanaged Kitware.mummy.CopyLibraries2)
     ADD_DEPENDENCIES(Kitware.VTK.vtk${kit}.Unmanaged "vtk${kit}GenerateWrappers")
   ENDFOREACH(kit)
@@ -1083,7 +1086,6 @@ IF(NOT WIN32)
     )
 ENDIF(NOT WIN32)
 
-# david.cole::fix -- TODO -- rename this CopyLibraries here too...
 ADD_CSHARP_LIBRARY(
   "Kitware.VTK" # name of library
   "${unmanaged_targets}" # list of CMake targets that need to build first
@@ -1155,12 +1157,16 @@ MACRO(CONFIGURE_EXAMPLE ce_name)
   CONFIGURE_FILE(${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/CS/${ce_name}.csproj.in
                  ${ActiVizDotNet_BINARY_DIR}/Examples/${ce_name}/CS/${ce_name}.csproj @ONLY)
 
-  CONFIGURE_FILE(${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.sln.in
-                 ${ActiVizDotNet_BINARY_DIR}/Examples/${ce_name}/VB/${ce_name}.sln @ONLY)
+  IF(EXISTS "${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.sln.in" AND
+    EXISTS "${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.vbproj.in")
+    CONFIGURE_FILE(${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.sln.in
+                   ${ActiVizDotNet_BINARY_DIR}/Examples/${ce_name}/VB/${ce_name}.sln @ONLY)
 
-  CONFIGURE_FILE(${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.vbproj.in
-                 ${ActiVizDotNet_BINARY_DIR}/Examples/${ce_name}/VB/${ce_name}.vbproj @ONLY)
-
+    CONFIGURE_FILE(${ActiVizDotNet_SOURCE_DIR}/Examples/${ce_name}/VB/${ce_name}.vbproj.in
+                   ${ActiVizDotNet_BINARY_DIR}/Examples/${ce_name}/VB/${ce_name}.vbproj @ONLY)
+  ELSE()
+    MESSAGE(STATUS "info: Example '${ce_name}' has no VB implementation")
+  ENDIF()
 ENDMACRO(CONFIGURE_EXAMPLE)
 
 CONFIGURE_EXAMPLE("BoxWidget")
@@ -1168,13 +1174,14 @@ CONFIGURE_EXAMPLE("CubeAxes")
 CONFIGURE_EXAMPLE("Decimate")
 CONFIGURE_EXAMPLE("DelMesh")
 CONFIGURE_EXAMPLE("Dialog")
+CONFIGURE_EXAMPLE("EventMonitor")
 CONFIGURE_EXAMPLE("FileTree")
+CONFIGURE_EXAMPLE("HelloVTKConsole")
+CONFIGURE_EXAMPLE("HelloVTKForm")
 CONFIGURE_EXAMPLE("SpherePuzzle")
 CONFIGURE_EXAMPLE("Streamline")
 CONFIGURE_EXAMPLE("VolumeRendering")
 CONFIGURE_EXAMPLE("Wikipedia")
-CONFIGURE_EXAMPLE("HelloVTKConsole")
-CONFIGURE_EXAMPLE("HelloVTKForm")
 
 
 IF(AVDN_BUILD_EXAMPLES)
@@ -1228,6 +1235,7 @@ IF(AVDN_ADD_INSTALL_RULES)
 
   IF(AVDN_BUILD_EXAMPLES AND AVDN_BUILD_SLN_FILES)
     SET(AVDN_INSTALL_FILES ${AVDN_INSTALL_FILES}
+      "EventMonitor.exe"
       "FileTree.exe"
     )
   ENDIF(AVDN_BUILD_EXAMPLES AND AVDN_BUILD_SLN_FILES)

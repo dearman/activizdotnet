@@ -135,7 +135,10 @@ IF(AVDN_BUILD_SLN_FILES)
     #"Decimate"
     #"DelMesh"
     #"Dialog"
+    "EventMonitor"
     "FileTree"
+    #"HelloVTKConsole" # can't be built by loop below: different set of files
+    #"HelloVTKForm"    # can't be built by loop below: different set of files
     #"SpherePuzzle"
     #"Streamline"
     #"VolumeRendering"

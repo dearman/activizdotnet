@@ -1,14 +1,37 @@
+SET(CPACK_PACKAGE_NAME "ActiViz.NET")
 SET(CPACK_PACKAGE_VERSION_MAJOR "${AVDN_MAJOR_VERSION}")
 SET(CPACK_PACKAGE_VERSION_MINOR "${AVDN_MINOR_VERSION}")
 SET(CPACK_PACKAGE_VERSION_PATCH "${AVDN_BUILD_VERSION}")
-SET(CPACK_PACKAGE_INSTALL_DIRECTORY "ActiViz.NET ${AVDN_MAJOR_VERSION}.${AVDN_MINOR_VERSION}.${AVDN_BUILD_VERSION}")
-SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${CPACK_PACKAGE_INSTALL_DIRECTORY} ${AVDN_EDITION} Edition - the scientific data visualization power of VTK harnessed for C#, VB.NET or any other .NET Framework language.")
-SET(CPACK_PACKAGE_VENDOR "Kitware")
+SET(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
+SET(CPACK_PACKAGE_INSTALL_DIRECTORY "${CPACK_PACKAGE_NAME} ${CPACK_PACKAGE_VERSION} ${AVDN_EDITION} Edition")
+SET(CPACK_PACKAGE_VENDOR "Kitware, Inc.")
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "${ActiVizDotNet_SOURCE_DIR}/License${AVDN_EDITION_SUFFIX}.txt")
 SET(CPACK_RESOURCE_FILE_LICENSE "${ActiVizDotNet_SOURCE_DIR}/License${AVDN_EDITION_SUFFIX}.txt")
 
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME
-  "ActiViz.NET-${AVDN_MAJOR_VERSION}.${AVDN_MINOR_VERSION}.${AVDN_BUILD_VERSION}.${AVDN_VERSION_SVN_REVISION}")
+  "${CPACK_PACKAGE_NAME}-${AVDN_MAJOR_VERSION}.${AVDN_MINOR_VERSION}.${AVDN_BUILD_VERSION}.${AVDN_VERSION_SVN_REVISION}")
+
+# Installers for 32- vs. 64-bit:
+#  - Root install directory (displayed to end user at installer-run time)
+#  - "NSIS package/display name" (text used in the installer GUI)
+#  - Registry key used to store info about the installation
+#
+# This bit requires CPack 2.8.4 or later, because CPACK_NSIS_INSTALL_ROOT is
+# ignored by previous versions of CPack.
+#
+IF(CMAKE_CL_64)
+  SET(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES64")
+  SET(CPACK_NSIS_PACKAGE_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} (Win64)")
+  SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} (Win64)")
+  SET(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "${CPACK_PACKAGE_INSTALL_DIRECTORY} (Win64)")
+ELSE()
+  SET(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES")
+  SET(CPACK_NSIS_PACKAGE_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY}")
+  SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY}")
+  SET(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "${CPACK_PACKAGE_INSTALL_DIRECTORY}")
+ENDIF()
+
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${CPACK_NSIS_DISPLAY_NAME} - the scientific data visualization power of VTK harnessed for C#, VB.NET or any other .NET Framework language.")
 
 IF(NOT DEFINED CPACK_SYSTEM_NAME)
   SET(CPACK_SYSTEM_NAME ${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR})
@@ -44,7 +67,6 @@ IF(WIN32)
   STRING(REGEX REPLACE "/" "\\\\\\\\" icon_file "${icon_file}")
   SET(CPACK_NSIS_MUI_UNIICON "${icon_file}")
 
-  SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_DESCRIPTION_SUMMARY}")
   SET(CPACK_NSIS_HELP_LINK "http://www.kitware.com/products/activiz.html")
   SET(CPACK_NSIS_URL_INFO_ABOUT "http://www.kitware.com")
   SET(CPACK_NSIS_CONTACT "kitware@kitware.com")
@@ -53,12 +75,14 @@ IF(WIN32)
   CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Examples.lnk\\\" \\\"$INSTDIR\\\\Examples\\\"
   CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\License.lnk\\\" \\\"$INSTDIR\\\\License${AVDN_EDITION_SUFFIX}.txt\\\"
   CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Users Guide.lnk\\\" \\\"$INSTDIR\\\\UsersGuide.pdf\\\"
-  CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\File Browser.lnk\\\" \\\"$INSTDIR\\\\bin\\\\FileTree.Exe\\\"
+  CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Event Monitor.lnk\\\" \\\"$INSTDIR\\\\bin\\\\EventMonitor.exe\\\"
+  CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\File Browser.lnk\\\" \\\"$INSTDIR\\\\bin\\\\FileTree.exe\\\"
 ")
 
   SET(CPACK_NSIS_EXTRA_UNINSTALL_COMMANDS "
   !insertmacro MUI_STARTMENU_GETFOLDER Application $MUI_TEMP
   Delete \\\"$SMPROGRAMS\\\\$MUI_TEMP\\\\File Browser.lnk\\\"
+  Delete \\\"$SMPROGRAMS\\\\$MUI_TEMP\\\\Event Monitor.lnk\\\"
   Delete \\\"$SMPROGRAMS\\\\$MUI_TEMP\\\\Users Guide.lnk\\\"
   Delete \\\"$SMPROGRAMS\\\\$MUI_TEMP\\\\License.lnk\\\"
   Delete \\\"$SMPROGRAMS\\\\$MUI_TEMP\\\\Examples.lnk\\\"
