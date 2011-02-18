@@ -20,8 +20,36 @@ namespace EventMonitor
     Kitware.VTK.vtkInteractorStyleUser UserStyle = null;
     Kitware.VTK.vtkObject.vtkObjectEventHandler UserHandler = null;
 
+    private Kitware.VTK.vtkOutputWindow ErrorWindow = null;
+    private Kitware.VTK.vtkObject.vtkObjectEventHandler ErrorHandler = null;
+
+    void ErrorWindow_ErrorHandler(Kitware.VTK.vtkObject sender, Kitware.VTK.vtkObjectEventArgs e)
+    {
+      string s = "unknown";
+      if (e.CallData != IntPtr.Zero)
+      {
+        s = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(e.CallData);
+      }
+
+      System.Diagnostics.Debug.Write(System.String.Format(
+        "ErrorWindow_ErrorHandler called: sender='{0}' e='{1}' s='{2}'", sender, e, s));
+    }
+
+    private void HookErrorWindowEvents()
+    {
+      if (null == this.ErrorWindow)
+      {
+        this.ErrorWindow = Kitware.VTK.vtkOutputWindow.GetInstance();
+        this.ErrorHandler = new Kitware.VTK.vtkObject.vtkObjectEventHandler(ErrorWindow_ErrorHandler);
+
+        this.ErrorWindow.ErrorEvt += this.ErrorHandler;
+      }
+    }
+
     public void HookEvents()
     {
+      this.HookErrorWindowEvents();
+
       this.Interactor = this.renderWindowControl1.RenderWindow.GetInteractor();
       this.InteractorHandler = new Kitware.VTK.vtkObject.vtkObjectEventHandler(Interactor_AnyEventHandler);
       this.Interactor.AnyEvt += this.InteractorHandler;
@@ -141,9 +169,23 @@ namespace EventMonitor
       this.renderWindowControl1.RenderWindow.Render();
     }
 
+    public void IntentionalVTKError()
+    {
+      try
+      {
+        Kitware.VTK.vtkDoubleArray a = Kitware.VTK.vtkDoubleArray.New();
+        int n = 1000000000;
+        a.SetNumberOfTuples(n);
+      }
+      catch(System.Exception)
+      {
+      }
+    }
+
     private void btnAdd_Click(object sender, EventArgs e)
     {
       this.AddActors();
+      //this.IntentionalVTKError();
     }
 
     private void btnRemove_Click(object sender, EventArgs e)
@@ -182,6 +224,42 @@ namespace EventMonitor
       // Disable the timer, so it's not continually firing:
       //
       this.timer1.Enabled = false;
+    }
+
+
+    double[] m_saved_focalpoint;
+    double[] m_saved_position;
+    double[] m_saved_viewup;
+
+    public void SaveRendererViewState(Kitware.VTK.vtkRenderer ren)
+    {
+      Kitware.VTK.vtkCamera cam = ren.GetActiveCamera();
+      m_saved_focalpoint = cam.GetFocalPoint();
+      m_saved_position = cam.GetPosition();
+      m_saved_viewup = cam.GetViewUp();
+    }
+
+    public void RestoreRendererViewState(Kitware.VTK.vtkRenderer ren)
+    {
+      Kitware.VTK.vtkCamera cam = ren.GetActiveCamera();
+      cam.SetFocalPoint(m_saved_focalpoint[0], m_saved_focalpoint[1], m_saved_focalpoint[2]);
+      cam.SetPosition(m_saved_position[0], m_saved_position[1], m_saved_position[2]);
+      cam.SetViewUp(m_saved_viewup[0], m_saved_viewup[1], m_saved_viewup[2]);
+      ren.ResetCameraClippingRange();
+    }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+      this.SaveRendererViewState(
+        this.renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer());
+    }
+
+    private void btnRestore_Click(object sender, EventArgs e)
+    {
+      this.RestoreRendererViewState(
+        this.renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer());
+
+      this.renderWindowControl1.RenderWindow.Render();
     }
   }
 }
