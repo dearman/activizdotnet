@@ -22,6 +22,7 @@
   <Class name="vtkMultiProcessStream" wrappable="false"/>
   <Class name="vtkOBBNode" wrappable="false"/>
   <Class name="vtkOutEdgeType" wrappable="false"/>
+  <Class name="vtkProcessingUnitResource" wrappable="false"/>
   <Class name="vtkPolygonalSurfacePointPlacerNode" wrappable="false"/>
   <Class name="vtkRectf" wrappable="false"/>
   <Class name="vtkRenderState" wrappable="false"/>
