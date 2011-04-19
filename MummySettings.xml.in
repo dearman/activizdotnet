@@ -12,6 +12,7 @@
   <Class name="vtkBoundingBox" wrappable="false"/>
   <Class name="vtkCallbackCommand" wrappable="false"/>
   <Class name="vtkColor3ub" wrappable="false"/>
+  <Class name="vtkColor4ub" wrappable="false"/>
   <Class name="vtkContextMouseEvent" wrappable="false"/>
   <Class name="vtkEdgeType" wrappable="false"/>
   <Class name="vtkExodusIICacheKey" wrappable="false"/>
