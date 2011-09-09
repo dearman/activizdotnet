@@ -14,6 +14,7 @@
   <Class name="vtkColor3ub" wrappable="false"/>
   <Class name="vtkColor4ub" wrappable="false"/>
   <Class name="vtkContextMouseEvent" wrappable="false"/>
+  <Class name="vtkContourRepresentationNode" wrappable="false"/>
   <Class name="vtkEdgeType" wrappable="false"/>
   <Class name="vtkExodusIICacheKey" wrappable="false"/>
   <Class name="vtkImageComplex" wrappable="false"/>
