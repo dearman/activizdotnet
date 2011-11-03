@@ -72,11 +72,11 @@ FOREACH(t ${testlist})
   IF(NOT "${t}" MATCHES "^#")
     STRING(REGEX REPLACE "^(.*.tcl).*E$" "\\1" tclfile "${t}")
 
-    IF("${AVDN_VTK_SOURCE_DIR}/${tclfile}" MATCHES "^.*/VTK/([^/]+)/Testing/Tcl/.*$")
-      STRING(REGEX REPLACE "^.*/VTK/([^/]+)/Testing/Tcl/.*$" "\\1" kit "${AVDN_VTK_SOURCE_DIR}/${tclfile}")
-    ELSE("${AVDN_VTK_SOURCE_DIR}/${tclfile}" MATCHES "^.*/VTK/([^/]+)/Testing/Tcl/.*$")
+    IF("${AVDN_VTK_SOURCE_DIR}/${tclfile}" MATCHES "^.*/([^/]+)/Testing/Tcl/.*$")
+      STRING(REGEX REPLACE "^.*/([^/]+)/Testing/Tcl/.*$" "\\1" kit "${AVDN_VTK_SOURCE_DIR}/${tclfile}")
+    ELSE()
       SET(kit "Other")
-    ENDIF("${AVDN_VTK_SOURCE_DIR}/${tclfile}" MATCHES "^.*/VTK/([^/]+)/Testing/Tcl/.*$")
+    ENDIF()
 
     #MESSAGE(STATUS "kit='${kit}' t='${t}'")
 
