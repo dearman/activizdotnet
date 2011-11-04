@@ -329,7 +329,7 @@ ENDIF("${AVDN_SVN_STATUS}" STREQUAL "")
 # Pull in FindSubversion.cmake to get the Subversion_WC_INFO macro:
 #
 
-SET(AVDN_WC_LAST_CHANGED_REV "599")
+SET(AVDN_WC_LAST_CHANGED_REV "607")
   #
   # This value is an artificial number that is simply incremented manually
   # now after switching to git from svn... Whenever we do "real packaging
