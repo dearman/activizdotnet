@@ -13,6 +13,7 @@
   <Class name="vtkCallbackCommand" wrappable="false"/>
   <Class name="vtkColor3ub" wrappable="false"/>
   <Class name="vtkColor4ub" wrappable="false"/>
+  <Class name="vtkContextKeyEvent" wrappable="false"/>
   <Class name="vtkContextMouseEvent" wrappable="false"/>
   <Class name="vtkContourRepresentationNode" wrappable="false"/>
   <Class name="vtkEdgeType" wrappable="false"/>
@@ -21,6 +22,8 @@
   <Class name="vtkImageConnectorSeed" wrappable="false"/>
   <Class name="vtkIndent" wrappable="false"/>
   <Class name="vtkInEdgeType" wrappable="false"/>
+  <Class name="vtkInterpolationInfo" wrappable="false"/>
+  <Class name="vtkInterpolationWeights" wrappable="false"/>
   <Class name="vtkMultiProcessStream" wrappable="false"/>
   <Class name="vtkOBBNode" wrappable="false"/>
   <Class name="vtkOutEdgeType" wrappable="false"/>
@@ -41,6 +44,8 @@
   <Class name="vtkUnicodeString" wrappable="false"/>
   <Class name="vtkVariant" wrappable="false"/>
   <Class name="vtkVector2f" wrappable="false"/>
+  <Class name="vtkVector2i" wrappable="false"/>
+  <Class name="vtkVector3d" wrappable="false"/>
   <Class name="vtkVolumeRayCastDynamicInfo" wrappable="false"/>
   <Class name="vtkVolumeRayCastStaticInfo" wrappable="false"/>
 @AVDN_EXTRA_EXCLUDE_CLASSES_XML@
