@@ -5,6 +5,9 @@ newalpha         crlf=input
 newversion       crlf=input
 pre-commit       crlf=input
 
+*.bat           -crlf
+*.cmd           -crlf
+
 *.c              whitespace=tab-in-indent
 *.h              whitespace=tab-in-indent
 *.cxx            whitespace=tab-in-indent
