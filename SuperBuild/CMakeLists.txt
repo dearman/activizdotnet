@@ -70,7 +70,21 @@ endif()
 
 set(gccxml_version "2011-11-03 01:00:00 UTC")
 set(mummy_version "1.0.2")
+
 set(vtk_version "5.8.0")
+if(NOT "$ENV{AVSB_VTK_VERSION}" STREQUAL "")
+  set(vtk_version "$ENV{AVSB_VTK_VERSION}")
+endif()
+
+set(vtk_git_tag "v${vtk_version}")
+if(NOT "$ENV{AVSB_VTK_GIT_TAG}" STREQUAL "")
+  set(vtk_git_tag "$ENV{AVSB_VTK_GIT_TAG}")
+endif()
+
+set(vtkdata_git_tag "v${vtk_version}-data")
+if(NOT "$ENV{AVSB_VTKDATA_GIT_TAG}" STREQUAL "")
+  set(vtkdata_git_tag "$ENV{AVSB_VTKDATA_GIT_TAG}")
+endif()
 
 
 ##############################################################################
@@ -167,7 +181,7 @@ set(mummy_dir "${install_dir}/share/mummy-${mummy_version}")
 
 ExternalProject_Add(vtkdata
   GIT_REPOSITORY "git://vtk.org/VTKData.git"
-  GIT_TAG "v${vtk_version}-data"
+  GIT_TAG "${vtkdata_git_tag}"
   UPDATE_COMMAND "" # update unnecessary, because it's a fixed static tag
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
@@ -183,7 +197,7 @@ set(vtkdata_dir "${source_dir}")
 
 ExternalProject_Add(vtksource
   GIT_REPOSITORY "git://vtk.org/VTK.git"
-  GIT_TAG "v${vtk_version}"
+  GIT_TAG "${vtk_git_tag}"
   UPDATE_COMMAND "" # update unnecessary, because it's a fixed static tag
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
