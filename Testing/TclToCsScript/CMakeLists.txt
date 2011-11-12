@@ -10,25 +10,68 @@ IF(NOT PYTHON_EXE)
   MESSAGE(FATAL_ERROR "python required to convert tcl tests")
 ENDIF(NOT PYTHON_EXE)
 
+
+# Copy-if-necessary *.py from current source dir to current binary dir. Run
+# all python scripts in the binary dir so we can do two or more builds at
+# once. When we used to generate *.py scripts in the source tree, multiple
+# simultaneous builds would occasionally clobber each other's changes to the
+# source tree... Also copy over any files that the python scripts expect to
+# be in the "current working directory" when they are run.
+foreach(py_file
+  GenerateVtkColors.py
+  GenerateVtkCommandList.py
+  recursiveglob.py
+  refdouble.hints
+  TclToCsConvertorDriver.py
+  TclToCsHashMap.py
+  XML_Parser.py
+  vtkTclParser.py
+  vtkTclToCsConvertor.py
+)
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/${py_file}
+    ${CMAKE_CURRENT_BINARY_DIR}/${py_file}
+    COPYONLY
+  )
+endforeach()
+
 # vtkClassList.py
-#
-FILE(WRITE "${CMAKE_CURRENT_SOURCE_DIR}/vtkClassList.py" "VTKClassList = [\n\"___list_begins___\",\n")
+FILE(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "VTKClassList = [\n\"___list_begins___\",\n")
 FOREACH(entry ${WRAPPED_CLASS_TABLE})
   STRING(REGEX REPLACE "^([^ ]+) .*$" "\\1" cxxclass "${entry}")
     # each 'entry' looks like: "${cxxclass} ${kit} ${abstract} ${header}"
-  FILE(APPEND "${CMAKE_CURRENT_SOURCE_DIR}/vtkClassList.py" "\"${cxxclass}\",\n")
+  FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"${cxxclass}\",\n")
 ENDFOREACH(entry)
-FILE(APPEND "${CMAKE_CURRENT_SOURCE_DIR}/vtkClassList.py" "\"__list_ends__\"\n]\n\ndef get_vtk_classes():\n  return VTKClassList\n")
+FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"__list_ends__\"\n]\n\ndef get_vtk_classes():\n  return VTKClassList\n")
+configure_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py
+  COPYONLY
+)
 
-#generate the list of vtkColors
-MESSAGE(STATUS "Generating vtkColors.py")
-EXECUTE_PROCESS (COMMAND ${PYTHON_EXE} GenerateVtkColors.py -vtkdir ${AVDN_VTK_SOURCE_DIR} RESULT_VARIABLE RES_VAR
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# Generate the list of vtkColors
+MESSAGE(STATUS "Generating vtkColors.py.in / vtkColors.py")
+EXECUTE_PROCESS (COMMAND ${PYTHON_EXE} GenerateVtkColors.py
+  -vtkdir ${AVDN_VTK_SOURCE_DIR}
+  RESULT_VARIABLE RES_VAR
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+configure_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkColors.py.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkColors.py
+  COPYONLY
+)
 
-#generate the list of vtkCommands
-MESSAGE(STATUS "Generating vtkCommandList.py")
-EXECUTE_PROCESS (COMMAND ${PYTHON_EXE} GenerateVtkCommandList.py -vtkdir ${AVDN_VTK_SOURCE_DIR} RESULT_VARIABLE RES_VAR
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# Generate the list of vtkCommands
+MESSAGE(STATUS "Generating vtkCommandList.py.in / vtkCommandList.py")
+EXECUTE_PROCESS (COMMAND ${PYTHON_EXE} GenerateVtkCommandList.py
+  -vtkdir ${AVDN_VTK_SOURCE_DIR}
+  RESULT_VARIABLE RES_VAR
+  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+configure_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkCommandList.py.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkCommandList.py
+  COPYONLY
+)
 
 
 MACRO(CONVERT_VTK_TCL_SCRIPT_TO_CSHARP cvtstc_file cvtstc_listvar)
@@ -38,13 +81,13 @@ MACRO(CONVERT_VTK_TCL_SCRIPT_TO_CSHARP cvtstc_file cvtstc_listvar)
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/AV${cvtstc_name_we}.cs
     COMMAND ${PYTHON_EXE}
     ARGS
-      ${CMAKE_CURRENT_SOURCE_DIR}/vtkTclToCsConvertor.py
+      ${CMAKE_CURRENT_BINARY_DIR}/vtkTclToCsConvertor.py
       -i "${cvtstc_file}"
       -o "${CMAKE_CURRENT_BINARY_DIR}/AV${cvtstc_name_we}.cs"
       -xmldir "${ActiVizDotNet_BINARY_DIR}/xml"
     DEPENDS
       "${cvtstc_file}"
-      ${CMAKE_CURRENT_SOURCE_DIR}/vtkTclToCsConvertor.py
+      ${CMAKE_CURRENT_BINARY_DIR}/vtkTclToCsConvertor.py
   )
 
   SET(${cvtstc_listvar} ${${cvtstc_listvar}} "${CMAKE_CURRENT_BINARY_DIR}/AV${cvtstc_name_we}.cs")
@@ -174,7 +217,7 @@ ENDIF(NOT AVDN_VTK_USE_PARALLEL)
 
 #IF(AVDN_VTK_USE_PARALLEL)
   #only use GLOB_RECURSE if parallel is turned on
-  
+
   #ELSE(AVDN_VTK_USE_PARALLEL)
   #don't include subdirs if parallel is off
   # FILE(GLOB HAND_CONVERTED_TESTS "Convert By Hand/*.cs")

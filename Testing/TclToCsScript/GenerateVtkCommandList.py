@@ -30,7 +30,7 @@ def get_vtk_event_ids():
   return vtkEventIDs"""
 
 try:
-   ofp = file("vtkCommandList.py", "w")
+   ofp = file("vtkCommandList.py.in", "w")
    ofp.write(output)
    ofp.close()
 except:

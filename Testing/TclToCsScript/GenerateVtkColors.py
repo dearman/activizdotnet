@@ -22,7 +22,7 @@ for f in fp:
 output= output[:-8]+"]\n     pass"
 
 try:
-   ofp = file("vtkColors.py", "w")
+   ofp = file("vtkColors.py.in", "w")
    ofp.write(output)
    ofp.close()
 except:
