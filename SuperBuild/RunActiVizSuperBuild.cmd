@@ -34,7 +34,6 @@ if "%key_file%" equ "" (
   echo.  Set it to the full path of a strong name signing key file or
   echo.  the mummy and ActiViz builds will not be strong name signed...
   echo.
-  pause
 )
 pushd "%root_dir%"
 
@@ -89,6 +88,4 @@ echo.
 echo Done - %DATE% %TIME%
 popd
 
-echo.
-pause
 endlocal
