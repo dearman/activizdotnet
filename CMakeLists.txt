@@ -848,11 +848,14 @@ IF(AVDN_DO_COPY_LIBRARIES_STEPS)
       #
       SET(vtkListOfDLLs ${vtkListOfDLLs}
         Cosmo
+        LSDyna
         VPIC
         vtkalglib
         vtkDICOMParser
         vtkexoIIc
         vtkftgl
+        vtkhdf5
+        vtkhdf5_hl
         vtkmetaio
         vtkNetCDF
         vtkNetCDF_cxx
