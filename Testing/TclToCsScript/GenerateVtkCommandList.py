@@ -10,24 +10,50 @@ if  not input_file:
 input_file = input_file+"/Common/vtkCommand.h"
 fp = file(input_file, "r")
 fp = fp.readlines()
-output = "vtkEventIDs = ["
+
+output = "vtkEventIDs = [\n"
 Start = False
+
 for f in fp:
+  # Old style:
   if f.strip() == "};":
     Start = False
+  # New style:
+  if f.strip() == "#define VTK_DECLARE_EVENTIDS(_enum_name)\\":
+    Start = False
+    output += "\"UserEvent\",\n"
+
   if Start == True:
-    if f.count("//")>0:
-      f=f[:f.find("//")]
-    if f.count("=")>0:
-      f=f[:f.find("=")]
-    f = f.replace(",","")
-    output+="\""+f.replace(" ","").replace("\n","")+"\",\n"
+    if f.find("*/")<0:
+      if f.count("//")>0:
+        f=f[:f.find("//")]
+      if f.count("=")>0:
+        f=f[:f.find("=")]
+      # Old style:
+      f = f.replace(",","")
+      # New style:
+      f = f.replace("_vtk_add_event(","")
+      f = f.replace(")","")
+      f = f.replace("\\","")
+      event_name = f.replace(" ","").replace("\n","")
+      if event_name != "":
+        output += "\"" + event_name + "\"" + ",\n"
+
+  # Old style:
   if f.strip().replace(" ","").replace("\n","") == "enumEventIds{":
     Start = True
-output = output[:-2]+"""]    
+  # New style:
+  if f.strip().replace(" ","").replace("\n","") == "#defineVTK_EVENT_TYPES\\":
+    Start = True
+    output += "\"NoEvent\",\n"
+
+
+output = output[:-2] + """
+]
 
 def get_vtk_event_ids():
-  return vtkEventIDs"""
+  return vtkEventIDs
+"""
 
 try:
    ofp = file("vtkCommandList.py.in", "w")
@@ -36,4 +62,3 @@ try:
 except:
    print "Failed to write output file %s" % output
    sys.exit(1)
-

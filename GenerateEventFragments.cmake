@@ -71,6 +71,72 @@ FOREACH(line ${AVDN_vtk_command_h})
 ENDFOREACH(line)
 
 
+# If nothing got picked up parsing out the old style vtkCommand.h list, give
+# it a whirl with the new style:
+IF(event_enum_value EQUAL 0)
+
+SET(in_event_list 0)
+SET(event_enum_value 0)
+
+FOREACH(line ${AVDN_vtk_command_h})
+  IF(in_event_list)
+    IF("${line}" STREQUAL "E")
+      SET(in_event_list 0)
+    ENDIF()
+  ENDIF()
+
+  IF(in_event_list)
+    IF(line MATCHES "^[\t ]*_vtk_add_event\\([\t ]*([^\t ]*)Event[\t ]*\\).*E$")
+      STRING(REGEX REPLACE
+        "^[\t ]*_vtk_add_event\\([\t ]*([^\t ]*)Event[\t ]*\\).*E$" "\\1"
+        event_basename "${line}")
+
+      SET(event_name "${event_basename}Evt")
+        # Evt == not "" and not "Event", (which would be the two preferred
+        # suffixes, but they both result in name clashes between events and
+        # methods...)
+
+      CONFIGURE_FILE(
+        "${gef_dir}/EventFragment.cs.in"
+        "${ActiVizDotNet_BINARY_DIR}/csharp/EventFragment_${event_basename}.cs"
+        @ONLY
+      )
+
+      MATH(EXPR event_enum_value "${event_enum_value} + 1")
+    ENDIF()
+  ENDIF()
+
+  IF("${line}" STREQUAL "#define VTK_EVENT_TYPES \\E")
+    SET(in_event_list 1)
+  ENDIF()
+ENDFOREACH()
+
+# In addition to parsing the list, also add the two pre-defined ones that
+# are not included in the list mechanism:
+#
+IF(NOT event_enum_value EQUAL 0)
+  FOREACH(event_basename No User)
+    SET(event_name "${event_basename}Evt")
+
+    CONFIGURE_FILE(
+      "${gef_dir}/EventFragment.cs.in"
+      "${ActiVizDotNet_BINARY_DIR}/csharp/EventFragment_${event_basename}.cs"
+      @ONLY
+    )
+  ENDFOREACH()
+ENDIF()
+
+ENDIF()
+
+
+IF(event_enum_value EQUAL 0)
+  MESSAGE(FATAL_ERROR "could not parse list of vtkCommand events from vtkCommand.h
+need more code in file '${CMAKE_CURRENT_LIST_FILE}'")
+ENDIF()
+
+#MESSAGE(STATUS "event_enum_value='${event_enum_value}'")
+
+
 # Touch the sentinel file to avoid re-running this script:
 #
 FILE(APPEND
