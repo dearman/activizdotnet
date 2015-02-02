@@ -22,7 +22,7 @@ public class BoxWidgetClass
         glyph = vtkGlyph3D.New();
 
         glyph.SetInputConnection(sphere.GetOutputPort());
-        glyph.SetSource(cone.GetOutput());
+        glyph.SetSourceConnection(cone.GetOutputPort());
         glyph.SetVectorModeToUseNormal();
         glyph.SetScaleModeToScaleByVector();
         glyph.SetScaleFactor(0.25);
@@ -30,8 +30,8 @@ public class BoxWidgetClass
         // The sphere and spikes are appended into a single polydata. This just makes things
         // simpler to manage.
         apd = vtkAppendPolyData.New();
-        apd.AddInput(glyph.GetOutput());
-        apd.AddInput(sphere.GetOutput());
+        apd.AddInputConnection(glyph.GetOutputPort());
+        apd.AddInputConnection(sphere.GetOutputPort());
 
         maceMapper = vtkPolyDataMapper.New();
         maceMapper.SetInputConnection(apd.GetOutputPort());
@@ -81,7 +81,7 @@ public class BoxWidgetClass
         // Place the interactor initially. The input to a 3D widget is used to 
         // initially position and scale the widget. The EndInteractionEvent is
         // observed which invokes the SelectPolygons callback.
-        boxWidget.SetInput(glyph.GetOutput());
+        boxWidget.SetInputConnection(glyph.GetOutputPort());
         boxWidget.PlaceWidget();
         boxWidget.EndInteractionEvt += new vtkObject.vtkObjectEventHandler(SelectPolygons);
         

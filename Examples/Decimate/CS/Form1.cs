@@ -28,7 +28,7 @@ namespace Decimate
         vtkTexture animalColorTexture = vtkTexture.New();
         vtkTexture eyeColorTexture1 = vtkTexture.New();
         vtkTexture eyeColorTexture2 = vtkTexture.New();
-        
+
         vtkTexture deciAnimalColorTexture = vtkTexture.New();
         vtkTexture deciEyeColorTexture1 = vtkTexture.New();
         vtkTexture deciEyeColorTexture2 = vtkTexture.New();
@@ -42,7 +42,7 @@ namespace Decimate
         vtkActor deciAnimalActor = vtkActor.New();
         vtkActor deciEyeActor1 = vtkActor.New();
         vtkActor deciEyeActor2 = vtkActor.New();
-        
+
         //text showing number of polygons in each window
         vtkTextActor textBefore = vtkTextActor.New();
         vtkTextActor textAfter = vtkTextActor.New();
@@ -51,7 +51,7 @@ namespace Decimate
         vtkDataSetMapper deciAnimalMapper = vtkDataSetMapper.New();
         vtkMapper deciEyeMapper1 = vtkDataSetMapper.New();
         vtkMapper deciEyeMapper2 = vtkDataSetMapper.New();
-        
+
         //full poly mappers
         vtkDataSetMapper animalMapper = vtkDataSetMapper.New();
         vtkMapper eyeMapper1 = vtkDataSetMapper.New();
@@ -117,7 +117,7 @@ namespace Decimate
             eyeX = 0.057;
             eyeY = -0.311;
             eyeZ = 1.879;
-           
+
             //load the rabbit model and textures if 
             //they are not already loaded
             if (!rabbitLoaded)
@@ -140,22 +140,22 @@ namespace Decimate
             eyeData2 = eyeData1;
 
             animalColorTexture.InterpolateOn();
-            animalColorTexture.SetInput(rabbitColorReader.GetOutput());
+            animalColorTexture.SetInputConnection(rabbitColorReader.GetOutputPort());
 
             deciAnimalColorTexture.InterpolateOn();
-            deciAnimalColorTexture.SetInput(rabbitColorReader.GetOutput());
+            deciAnimalColorTexture.SetInputConnection(rabbitColorReader.GetOutputPort());
 
             eyeColorTexture1.InterpolateOn();
-            eyeColorTexture1.SetInput(eyeColorReader.GetOutput());
+            eyeColorTexture1.SetInputConnection(eyeColorReader.GetOutputPort());
 
             deciEyeColorTexture1.InterpolateOn();
-            deciEyeColorTexture1.SetInput(eyeColorReader.GetOutput());
+            deciEyeColorTexture1.SetInputConnection(eyeColorReader.GetOutputPort());
 
             eyeColorTexture2.InterpolateOn();
-            eyeColorTexture2.SetInput(eyeColorReader.GetOutput());
+            eyeColorTexture2.SetInputConnection(eyeColorReader.GetOutputPort());
 
             deciEyeColorTexture2.InterpolateOn();
-            deciEyeColorTexture2.SetInput(eyeColorReader.GetOutput());
+            deciEyeColorTexture2.SetInputConnection(eyeColorReader.GetOutputPort());
         }
         /// <summary>
         /// Loads the Squirrel model and textures
@@ -191,22 +191,22 @@ namespace Decimate
             //Set the algorithms and textures to the
             //ouput of the readers
             eyeColorTexture1.InterpolateOn();
-            eyeColorTexture1.SetInput(squirrelEyeColorReader.GetOutput());
+            eyeColorTexture1.SetInputConnection(squirrelEyeColorReader.GetOutputPort());
 
             deciEyeColorTexture1.InterpolateOn();
-            deciEyeColorTexture1.SetInput(squirrelEyeColorReader.GetOutput());
+            deciEyeColorTexture1.SetInputConnection(squirrelEyeColorReader.GetOutputPort());
 
             eyeColorTexture2.InterpolateOn();
-            eyeColorTexture2.SetInput(squirrelEyeColorReader2.GetOutput());
+            eyeColorTexture2.SetInputConnection(squirrelEyeColorReader2.GetOutputPort());
 
             deciEyeColorTexture2.InterpolateOn();
-            deciEyeColorTexture2.SetInput(squirrelEyeColorReader2.GetOutput());
+            deciEyeColorTexture2.SetInputConnection(squirrelEyeColorReader2.GetOutputPort());
 
             animalColorTexture.InterpolateOn();
-            animalColorTexture.SetInput(squirrelColorReader.GetOutput());
+            animalColorTexture.SetInputConnection(squirrelColorReader.GetOutputPort());
 
             deciAnimalColorTexture.InterpolateOn();
-            deciAnimalColorTexture.SetInput(squirrelColorReader.GetOutput());
+            deciAnimalColorTexture.SetInputConnection(squirrelColorReader.GetOutputPort());
 
             eyeData2 = squirrelEyeReader2.GetOutputPort();
             eyeData1 = squirrelEyeReader.GetOutputPort();
@@ -248,22 +248,22 @@ namespace Decimate
             eyeData2 = eyeData1;
 
             animalColorTexture.InterpolateOn();
-            animalColorTexture.SetInput(flyingSquirrelColorReader.GetOutput());
-            
+            animalColorTexture.SetInputConnection(flyingSquirrelColorReader.GetOutputPort());
+
             deciAnimalColorTexture.InterpolateOn();
-            deciAnimalColorTexture.SetInput(flyingSquirrelColorReader.GetOutput());
-            
+            deciAnimalColorTexture.SetInputConnection(flyingSquirrelColorReader.GetOutputPort());
+
             eyeColorTexture1.InterpolateOn();
-            eyeColorTexture1.SetInput(flyingSquirrelEyeColorReader.GetOutput());
-            
+            eyeColorTexture1.SetInputConnection(flyingSquirrelEyeColorReader.GetOutputPort());
+
             deciEyeColorTexture1.InterpolateOn();
-            deciEyeColorTexture1.SetInput(flyingSquirrelEyeColorReader.GetOutput());
-            
+            deciEyeColorTexture1.SetInputConnection(flyingSquirrelEyeColorReader.GetOutputPort());
+
             eyeColorTexture2.InterpolateOn();
-            eyeColorTexture2.SetInput(flyingSquirrelEyeColorReader.GetOutput());
-            
+            eyeColorTexture2.SetInputConnection(flyingSquirrelEyeColorReader.GetOutputPort());
+
             deciEyeColorTexture2.InterpolateOn();
-            deciEyeColorTexture2.SetInput(flyingSquirrelEyeColorReader.GetOutput());   
+            deciEyeColorTexture2.SetInputConnection(flyingSquirrelEyeColorReader.GetOutputPort());
         }
         /// <summary>
         /// Loads the Chinchilla model and textures
@@ -300,22 +300,22 @@ namespace Decimate
             eyeData2 = eyeData1;
 
             animalColorTexture.InterpolateOn();
-            animalColorTexture.SetInput(chinchillaColorReader.GetOutput());
+            animalColorTexture.SetInputConnection(chinchillaColorReader.GetOutputPort());
 
             deciAnimalColorTexture.InterpolateOn();
-            deciAnimalColorTexture.SetInput(chinchillaColorReader.GetOutput());
+            deciAnimalColorTexture.SetInputConnection(chinchillaColorReader.GetOutputPort());
 
             eyeColorTexture1.InterpolateOn();
-            eyeColorTexture1.SetInput(chinchillaEyeColorReader.GetOutput());
+            eyeColorTexture1.SetInputConnection(chinchillaEyeColorReader.GetOutputPort());
 
             deciEyeColorTexture1.InterpolateOn();
-            deciEyeColorTexture1.SetInput(chinchillaEyeColorReader.GetOutput());
+            deciEyeColorTexture1.SetInputConnection(chinchillaEyeColorReader.GetOutputPort());
 
             eyeColorTexture2.InterpolateOn();
-            eyeColorTexture2.SetInput(chinchillaEyeColorReader.GetOutput());
+            eyeColorTexture2.SetInputConnection(chinchillaEyeColorReader.GetOutputPort());
 
             deciEyeColorTexture2.InterpolateOn();
-            deciEyeColorTexture2.SetInput(chinchillaEyeColorReader.GetOutput());
+            deciEyeColorTexture2.SetInputConnection(chinchillaEyeColorReader.GetOutputPort());
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace Decimate
         /// </summary>
         public Form1()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         /// <summary>
@@ -356,11 +356,13 @@ namespace Decimate
                 decimateAnimal.SetInputConnection(triangleAnimal.GetOutputPort());
             }
 
-            decimateAnimal.SetTargetReduction(System.Convert.ToDouble(toolStripTextBox1.Text));
+            double targetreduc = 0.5;
+            if (double.TryParse(toolStripTextBox1.Text, out targetreduc))
+                decimateAnimal.SetTargetReduction(targetreduc);
             decimateAnimal.SetPreserveTopology(0);
             //connect the decimated polydata a mapper
             deciAnimalMapper.SetInputConnection(decimateAnimal.GetOutputPort());
-            
+
             //----Go through the pipeline for the first eye
 
             //Convert the polydata to triangles (in the default files they are rectangles)
@@ -383,7 +385,8 @@ namespace Decimate
                 eyeMapper1.SetInputConnection(sphereTexture.GetOutputPort());
             }
             decimate.SetInputConnection(sphereTexture.GetOutputPort());
-            decimate.SetTargetReduction(System.Convert.ToDouble(toolStripTextBox1.Text));
+            if (double.TryParse(toolStripTextBox1.Text, out targetreduc))
+                decimate.SetTargetReduction(targetreduc);
             decimate.SetPreserveTopology(0);
             //connect the decimated polydata a mapper
             deciEyeMapper1.SetInputConnection(decimate.GetOutputPort());
@@ -406,10 +409,11 @@ namespace Decimate
             {
                 sphereTexture.SetInputConnection(triangles.GetOutputPort());
                 //connect the triangle polydata to a mapper before decimation
-                eyeMapper2.SetInputConnection(sphereTexture.GetOutputPort()); 
+                eyeMapper2.SetInputConnection(sphereTexture.GetOutputPort());
             }
             decimate.SetInputConnection(sphereTexture.GetOutputPort());
-            decimate.SetTargetReduction(System.Convert.ToDouble(toolStripTextBox1.Text));
+            if (double.TryParse(toolStripTextBox1.Text, out targetreduc))
+                decimate.SetTargetReduction(targetreduc);
             decimate.SetPreserveTopology(0);
             //connect the decimated polydata a mapper
             deciEyeMapper2.SetInputConnection(decimate.GetOutputPort());
@@ -446,6 +450,7 @@ namespace Decimate
                 deciEyeActor2.SetTexture(null);
             }
             deciEyeActor2.SetPosition(-eyeX, eyeY, eyeZ);
+
 
             //----Set the text to the decimated poly count
 
@@ -486,11 +491,12 @@ namespace Decimate
                 eyeActor2.SetTexture(null);
             }
             eyeActor2.SetPosition(-eyeX, eyeY, eyeZ);
-            
+
             //Update the pipeline to get the number of polygons
             animalMapper.Update();
             eyeMapper1.Update();
             eyeMapper2.Update();
+
             //----Set the text to the full poly count
             textBefore.SetInput((((vtkPolyData)animalMapper.GetInput()).GetNumberOfPolys() + ((vtkPolyData)eyeMapper1.GetInput()).GetNumberOfPolys() + ((vtkPolyData)eyeMapper2.GetInput()).GetNumberOfPolys()).ToString() + " Polygons");
             textBefore.SetDisplayPosition(10, 10);
@@ -508,7 +514,6 @@ namespace Decimate
             ren.GetActiveCamera().SetFocalPoint(0, eyeY, eyeZ);
             //dolly the camera out from the animal's head
             ren.GetActiveCamera().SetPosition(0, eyeY - 3, eyeZ);
-            ren.Render();
         }
         /// <summary>
         /// Smooth or unsmooth the animal
@@ -631,6 +636,7 @@ namespace Decimate
             {
                 //load the model
                 loadRabbit();
+
                 //Create the pipeline
                 updateAnimal();
 
@@ -657,7 +663,7 @@ namespace Decimate
 
                 //Add Handlers
                 renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera().ModifiedEvt += new vtkObject.vtkObjectEventHandler(Camera1_Modified);
-                renderWindowControl2.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera().ModifiedEvt += new vtkObject.vtkObjectEventHandler(Camera2_Modified);
+                renderWindowControl2.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera().ModifiedEvt += new vtkObject.vtkObjectEventHandler(Camera2_Modified);*/
             }
         }
         /// <summary>
@@ -677,7 +683,7 @@ namespace Decimate
 
                 camera2 = renderWindowControl2.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera();
                 camera1 = renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera();
-               
+
                 //Set camera 1's position to camera 2's position
                 camera1.SetPosition(camera2.GetPosition()[0], camera2.GetPosition()[1], camera2.GetPosition()[2]);
                 camera1.SetFocalPoint(camera2.GetFocalPoint()[0], camera2.GetFocalPoint()[1], camera2.GetFocalPoint()[2]);
@@ -702,7 +708,7 @@ namespace Decimate
 
                 vtkCamera camera1;
                 vtkCamera camera2;
-                
+
                 camera1 = renderWindowControl1.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera();
                 camera2 = renderWindowControl2.RenderWindow.GetRenderers().GetFirstRenderer().GetActiveCamera();
 
@@ -725,7 +731,7 @@ namespace Decimate
         {
             if (e.KeyChar == '\r')
             {
-                this.toolStripButton1_Click(sender,e);
+                this.toolStripButton1_Click(sender, e);
             }
         }
 

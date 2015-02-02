@@ -125,7 +125,7 @@ namespace FileTree
             vtkStringArray name = (vtkStringArray)g.GetVertexData().GetAbstractArray("name");
             vtkLongLongArray size = (vtkLongLongArray)g.GetVertexData().GetAbstractArray("size");
             vtkStringArray fullpath = (vtkStringArray)g.GetVertexData().GetAbstractArray("path");
-            
+
             if (Directory.Exists(path))
             {
                 long v = 0;

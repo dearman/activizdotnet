@@ -48,7 +48,7 @@ namespace Wikipedia
             vtkImageData idata = vtkImageData.FromImage(img);
 
             logoActor = vtkImageActor.New();
-            logoActor.SetInput(idata);
+            logoActor.SetInputConnection(idata);
             logoRenderer = vtkRenderer.New();
             logoRenderer.AddActor(logoActor);
             //Look at the center of the logo instead of the default bottom right corner

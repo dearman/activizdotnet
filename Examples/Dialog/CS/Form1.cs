@@ -62,7 +62,7 @@ namespace Dialog
                     rdr.SetFileName(fileName);
                     rdr.Update();
                     imgProp = vtkImageActor.New();
-                    ((vtkImageActor)imgProp).SetInput(rdr.GetOutput());
+                    ((vtkImageActor)imgProp).SetInputConnection(rdr.GetOutputPort());
                     rdr.Dispose();
                 }
 
@@ -76,7 +76,7 @@ namespace Dialog
                     imgProp = vtkActor.New();
                     dataReader.SetFileName(fileName);
                     dataReader.Update();
-                    dataMapper.SetInput(dataReader.GetOutput());
+                    dataMapper.SetInputConnection(dataReader.GetOutputPort());
                     ((vtkActor)imgProp).SetMapper(dataMapper);
                     dataMapper.Dispose();
                     dataMapper = null;

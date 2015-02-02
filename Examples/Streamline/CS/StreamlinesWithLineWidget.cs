@@ -17,7 +17,7 @@ public class StreamlinesWithLineWidgetClass
         // invoked by pressing 'W', the other by pressing 'L'. Both can exist
         // together.
         // Start by loading some data.
-        pl3d = vtkPLOT3DReader.New();
+        pl3d = vtkMultiBlockPLOT3DReader.New();
         pl3d.SetXYZFileName("../../../combxyz.bin");
         pl3d.SetQFileName("../../../combq.bin");
         pl3d.SetScalarFunctionNumber(100);
@@ -35,7 +35,7 @@ public class StreamlinesWithLineWidgetClass
 
         rk4 = vtkRungeKutta4.New();
         streamer = vtkStreamLine.New();
-        streamer.SetInputConnection(pl3d.GetOutputPort());
+        streamer.SetInputData((vtkDataSet)pl3d.GetOutput().GetBlock(0));
         streamer.SetSource(seeds);
         streamer.SetMaximumPropagationTime(100);
         streamer.SetIntegrationStepLength(.2);
@@ -66,7 +66,7 @@ public class StreamlinesWithLineWidgetClass
         lineWidget2.SetKeyPressActivationValue((sbyte)108);
 
         streamer2 = vtkStreamLine.New();
-        streamer2.SetInputConnection(pl3d.GetOutputPort());
+        streamer2.SetInputDaat((vtkDataSet)pl3d.GetOutput().GetBlock(0));
         streamer2.SetSource(seeds2);
         streamer2.SetMaximumPropagationTime(100);
         streamer2.SetIntegrationStepLength(.2);
@@ -90,7 +90,7 @@ public class StreamlinesWithLineWidgetClass
         streamline2.VisibilityOff();
 
         outline = vtkStructuredGridOutlineFilter.New();
-        outline.SetInputConnection(pl3d.GetOutputPort());
+        outline.SetInputData((vtkDataSet)pl3d.GetOutput().GetBlock(0));
 
         outlineMapper = vtkPolyDataMapper.New();
         outlineMapper.SetInputConnection(outline.GetOutputPort());
@@ -137,7 +137,7 @@ public class StreamlinesWithLineWidgetClass
         deleteAllVTKObjects();
     }
 
-    static vtkPLOT3DReader pl3d;
+    static vtkMultiBlockPLOT3DReader pl3d;
     static vtkLineWidget lineWidget;
     static vtkPolyData seeds;
     static vtkRungeKutta4 rk4;

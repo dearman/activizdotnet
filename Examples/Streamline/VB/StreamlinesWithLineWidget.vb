@@ -5,7 +5,7 @@ Imports Kitware.VTK
 ' </summary
 Module StreamlinesWithLineWidget
 
-    Dim pl3d As vtkPLOT3DReader
+    Dim pl3d As vtkMultiBlockPLOT3DReader
     Dim lineWidget As vtkLineWidget
     Dim seeds As vtkPolyData
     Dim rk4 As vtkRungeKutta4
@@ -39,7 +39,7 @@ Module StreamlinesWithLineWidget
         ' invoked by pressing 'W', the other by pressing 'L'. Both can exist
         ' together.
         ' Start by loading some data.
-        pl3d = vtkPLOT3DReader.[New]
+        pl3d = vtkMultiBlockPLOT3DReader.[New]
         pl3d.SetXYZFileName("../../../combxyz.bin")
         pl3d.SetQFileName("../../../combq.bin")
         pl3d.SetScalarFunctionNumber(100)
