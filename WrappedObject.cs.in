@@ -18,10 +18,10 @@ namespace @csharp_namespace@
     // be a const string variable here that names the export-layer dll from
     // which a class's export layer functions are exported...
     //
-    // For example, for a group = "vtkCommon" there needs to be a variable
-    // named vtkCommonEL_dll and its value needs to be the actual name of the
+    // For example, for a group = "vtkCommonCore" there needs to be a variable
+    // named vtkCommonCoreEL_dll and its value needs to be the actual name of the
     // dll file that it represents... (which is either @CMAKE_SHARED_LIBRARY_PREFIX@vtkEL@CMAKE_SHARED_LIBRARY_SUFFIX@ or
-    // @CMAKE_SHARED_LIBRARY_PREFIX@vtkCommonEL@CMAKE_SHARED_LIBRARY_SUFFIX@ depending on if you build one big export layer dll or
+    // @CMAKE_SHARED_LIBRARY_PREFIX@vtkCommonCoreEL@CMAKE_SHARED_LIBRARY_SUFFIX@ depending on if you build one big export layer dll or
     // one for each VTK kit...)
     //------------------------------------------------------------------------
 
@@ -35,6 +35,42 @@ namespace @csharp_namespace@
     protected WrappedObject(IntPtr rawCppThis, bool callDisposalMethod, bool strong)
       : base(rawCppThis, callDisposalMethod, strong)
     {
+    }
+
+    //------------------------------------------------------------------------
+    /// <summary>
+    /// Static constructor to force-load all "implementation" modules.
+    /// Reference a single class from each of the implementation modules
+    /// to force it to load the corresponding Unmanaged dll and register
+    /// its factories.
+    /// </summary>
+    static WrappedObject()
+    {
+      string s;
+
+      // from vtkRenderingOpenGL
+      using (Kitware.VTK.vtkOpenGLActor o = Kitware.VTK.vtkOpenGLActor.New())
+      {
+        s = o.ToString();
+      }
+
+      // from vtkInteractionStyle
+      using (Kitware.VTK.vtkInteractorStyleSwitch o = Kitware.VTK.vtkInteractorStyleSwitch.New())
+      {
+        s = o.ToString();
+      }
+
+      // from vtkRenderingVolumeOpenGL
+      using (Kitware.VTK.vtkOpenGLVolumeTextureMapper2D o = Kitware.VTK.vtkOpenGLVolumeTextureMapper2D.New())
+      {
+        s = o.ToString();
+      }
+
+      // from vtkRenderingFreeTypeOpenGL
+      using (Kitware.VTK.vtkOpenGLFreeTypeTextMapper o = Kitware.VTK.vtkOpenGLFreeTypeTextMapper.New())
+      {
+        s = o.ToString();
+      }
     }
   }
 }

@@ -1,3 +1,4 @@
+#define __WRAP_GCCXML__ 1
 #include "@header@"
 
 #ifdef CABLE_CONFIGURATION

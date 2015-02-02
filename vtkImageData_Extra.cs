@@ -16,6 +16,9 @@ public static vtkImageData FromImage(System.Drawing.Image img,int numberOfScalar
   System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(img);
   vtkImageData idata = vtkImageData.New();
 
+// TODO: revert this #if False block later after updating code to work
+// with current vtkImageData method names
+#if False
   idata.SetScalarTypeToUnsignedChar();
 
   idata.SetNumberOfScalarComponents(numberOfScalarComponents);
@@ -37,6 +40,7 @@ public static vtkImageData FromImage(System.Drawing.Image img,int numberOfScalar
       }
     }
   System.Runtime.InteropServices.Marshal.Copy(data, 0,(IntPtr) idata.GetScalarPointer(), data.Length);
+#endif
   return idata;
 }
 ///<summary>

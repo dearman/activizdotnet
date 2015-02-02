@@ -1,5 +1,5 @@
-MACRO(ADD_EXTERNAL_CSHARP_PROJECT aecp_name aecp_dir aecp_sln aecp_target_cpu aecp_out aecp_out_dir aecp_dependencies aecp_sources aecp_dependent_dlls)
-  ADD_CUSTOM_COMMAND(
+macro(ADD_EXTERNAL_CSHARP_PROJECT aecp_name aecp_dir aecp_sln aecp_target_cpu aecp_out aecp_out_dir aecp_dependencies aecp_sources aecp_dependent_dlls)
+  add_custom_command(
     OUTPUT "${aecp_out_dir}/${aecp_out}"
     DEPENDS ${aecp_dir}/${aecp_sln} ${aecp_sources} ${aecp_dependent_dlls}
     WORKING_DIRECTORY ${aecp_dir}
@@ -7,62 +7,62 @@ MACRO(ADD_EXTERNAL_CSHARP_PROJECT aecp_name aecp_dir aecp_sln aecp_target_cpu ae
     ARGS "${aecp_sln}" /Build "\"${CMAKE_CFG_INTDIR}|${aecp_target_cpu}\""
     )
 
-  ADD_CUSTOM_TARGET(
+  add_custom_target(
     "${aecp_name}" ALL
     DEPENDS "${aecp_out_dir}/${aecp_out}"
     )
 
-  ADD_DEPENDENCIES("${aecp_name}" ${aecp_dependencies})
-ENDMACRO(ADD_EXTERNAL_CSHARP_PROJECT)
+  add_dependencies("${aecp_name}" ${aecp_dependencies})
+endmacro()
 
 
-MACRO(MODIFY_CSPROJFILE mc_csprojfile)
-  EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E copy
+macro(MODIFY_CSPROJFILE mc_csprojfile)
+  execute_process(COMMAND ${CMAKE_COMMAND} -E copy
     "${mc_csprojfile}"
     "${mc_csprojfile}.backup"
     )
 
   # Read in the .csproj file:
   #
-  FILE(READ "${mc_csprojfile}" contents)
-  STRING(REGEX REPLACE ";" "\\\\;" contents "${contents}")
-  STRING(REGEX REPLACE "\n" "E;" contents "${contents}")
+  file(READ "${mc_csprojfile}" contents)
+  string(REGEX REPLACE ";" "\\\\;" contents "${contents}")
+  string(REGEX REPLACE "\n" "E;" contents "${contents}")
 
   # Write a new empty file:
   #
-  FILE(WRITE "${mc_csprojfile}.new" "")
+  file(WRITE "${mc_csprojfile}.new" "")
 
   # Scan for "<OutputPath>.*</OutputPath>" matches:
   #
-  FOREACH(line ${contents})
-    IF(line MATCHES "^(.*)<OutputPath>.*</OutputPath>(.*)E$")
-      STRING(REGEX REPLACE "^(.*)<OutputPath>.*</OutputPath>(.*)E$" "\\1<OutputPath>..\\\\..\\\\..\\\\bin\\\\$\(Configuration\)</OutputPath>\\2" newline "${line}")
-    ELSE(line MATCHES "^(.*)<OutputPath>.*</OutputPath>(.*)E$")
-      STRING(REGEX REPLACE "^(.*)E$" "\\1" newline "${line}")
-    ENDIF(line MATCHES "^(.*)<OutputPath>.*</OutputPath>(.*)E$")
+  foreach(line ${contents})
+    if(line MATCHES "^(.*)<OutputPath>.*</OutputPath>(.*)E$")
+      string(REGEX REPLACE "^(.*)<OutputPath>.*</OutputPath>(.*)E$" "\\1<OutputPath>..\\\\..\\\\..\\\\bin\\\\$\(Configuration\)</OutputPath>\\2" newline "${line}")
+    else()
+      string(REGEX REPLACE "^(.*)E$" "\\1" newline "${line}")
+    endif()
 
     # Append to the new file:
     #
-    FILE(APPEND "${mc_csprojfile}.new" "${newline}\n")
-  ENDFOREACH(line)
+    file(APPEND "${mc_csprojfile}.new" "${newline}\n")
+  endforeach()
 
   # Copy the new one on top of the original input (in-place replacement)
   # and then get rid of the new one:
   #
-  EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E copy
+  execute_process(COMMAND ${CMAKE_COMMAND} -E copy
     "${mc_csprojfile}.new"
     "${mc_csprojfile}"
     )
-  EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E remove
+  execute_process(COMMAND ${CMAKE_COMMAND} -E remove
     "${mc_csprojfile}.new"
     )
-ENDMACRO(MODIFY_CSPROJFILE)
+endmacro()
 
 
-MACRO(ADD_EXAMPLE ae_name ae_dir ae_sln ae_output ae_sources)
+macro(ADD_EXAMPLE ae_name ae_dir ae_sln ae_output ae_sources)
   # Copy the whole example directory given to its parallel in the build tree:
   #
-  EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E copy_directory
+  execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory
     "${ActiVizDotNet_BINARY_DIR}/Examples/${ae_dir}"
     "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}"
     )
@@ -73,29 +73,29 @@ MACRO(ADD_EXAMPLE ae_name ae_dir ae_sln ae_output ae_sources)
   #
   # Create a list of full path sources.
   #
-  SET(ae_full_sources "")
-  FOREACH(s ${ae_sources})
-    SET(ae_full_sources ${ae_full_sources} "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${s}")
+  set(ae_full_sources "")
+  foreach(s ${ae_sources})
+    set(ae_full_sources ${ae_full_sources} "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${s}")
 
-    IF(s MATCHES "\\.csproj$")
-      MESSAGE(STATUS "Modifying .csproj file: '${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${s}'")
+    if(s MATCHES "\\.csproj$")
+      message(STATUS "Modifying .csproj file: '${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${s}'")
       MODIFY_CSPROJFILE("${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${s}")
-    ENDIF(s MATCHES "\\.csproj$")
-  ENDFOREACH(s)
+    endif()
+  endforeach()
 
   # Upgrade the project to the latest version of visual studio
   #
-  EXECUTE_PROCESS(COMMAND 
+  execute_process(COMMAND
     "${CMAKE_MAKE_PROGRAM}" "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild/${ae_dir}/${ae_sln}" "/upgrade"
     )
 
   # Add a custom target that builds the example via its .sln file:
   #
-  IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
-    SET(ae_target_cpu "x64")
-  ELSE(CMAKE_SIZEOF_VOID_P EQUAL 8)
-    SET(ae_target_cpu "x86")
-  ENDIF(CMAKE_SIZEOF_VOID_P EQUAL 8)
+  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    set(ae_target_cpu "x64")
+  else()
+    set(ae_target_cpu "x86")
+  endif()
 
   ADD_EXTERNAL_CSHARP_PROJECT(
     "${ae_name}"
@@ -108,28 +108,28 @@ MACRO(ADD_EXAMPLE ae_name ae_dir ae_sln ae_output ae_sources)
     "${ae_full_sources}"
     "${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/Kitware.VTK.dll"
     )
-ENDMACRO(ADD_EXAMPLE)
+endmacro()
 
 
-MESSAGE(STATUS "info: '${CMAKE_CURRENT_LIST_FILE}' included...")
+message(STATUS "info: '${CMAKE_CURRENT_LIST_FILE}' included...")
 
 
-SET(AVDN_BUILD_SLN_FILES OFF)
+set(AVDN_BUILD_SLN_FILES OFF)
 
 
-IF(MSVC80 OR MSVC90)
-  MESSAGE(STATUS "info: MSVC80 OR MSVC90")
-  SET(AVDN_BUILD_SLN_FILES ON)
-ENDIF(MSVC80 OR MSVC90)
+if(MSVC80 OR MSVC90)
+  message(STATUS "info: MSVC80 OR MSVC90")
+  set(AVDN_BUILD_SLN_FILES ON)
+endif()
 
 
-IF(AVDN_BUILD_SLN_FILES)
+if(AVDN_BUILD_SLN_FILES)
   # Force a clean build of "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild"
   # after every CMake configure for now:
   #
-  FILE(REMOVE_RECURSE "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild")
+  file(REMOVE_RECURSE "${ActiVizDotNet_BINARY_DIR}/ExamplesBuild")
 
-  SET(EXAMPLES
+  set(EXAMPLES
     #"BoxWidget"
     #"CubeAxes"
     #"Decimate"
@@ -148,8 +148,8 @@ IF(AVDN_BUILD_SLN_FILES)
   # As happy good luck would have it, the source list for both of the uncommented
   # examples that build here is exactly the same:
   #
-  FOREACH(ex ${EXAMPLES})
-    SET(s
+  foreach(ex ${EXAMPLES})
+    set(s
       "Form1.cs"
       "Form1.Designer.cs"
       "Form1.resx"
@@ -164,6 +164,6 @@ IF(AVDN_BUILD_SLN_FILES)
       )
 
     ADD_EXAMPLE("Build.Examples.${ex}" "${ex}/CS" "${ex}.sln" "${ex}.exe" "${s}")
-  ENDFOREACH(ex)
+  endforeach()
 
-ENDIF(AVDN_BUILD_SLN_FILES)
+endif()

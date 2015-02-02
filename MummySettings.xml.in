@@ -4,20 +4,30 @@
   <!-- (These VTK classes are not included in the list of wrapped classes
        that comes out of VTK's CMake info...) -->
 
-  <Class name="vtkAbstractContextBufferId" wrappable="false"/>
   <Class name="vtkAMRBox" wrappable="false"/>
   <Class name="vtkArrayCoordinates" wrappable="false"/>
   <Class name="vtkArrayExtents" wrappable="false"/>
   <Class name="vtkArrayRange" wrappable="false"/>
+  <Class name="vtkAtom" wrappable="false"/>
+  <Class name="vtkBlueObeliskData" wrappable="false"/>
+  <Class name="vtkBlueObeliskDataParser" wrappable="false"/>
+  <Class name="vtkBond" wrappable="false"/>
   <Class name="vtkBoundingBox" wrappable="false"/>
   <Class name="vtkCallbackCommand" wrappable="false"/>
+  <Class name="vtkColor3f" wrappable="false"/>
   <Class name="vtkColor3ub" wrappable="false"/>
   <Class name="vtkColor4ub" wrappable="false"/>
+  <Class name="vtkContext3D" wrappable="false"/>
+  <Class name="vtkContextDevice2D" wrappable="false"/>
+  <Class name="vtkContextDevice3D" wrappable="false"/>
   <Class name="vtkContextKeyEvent" wrappable="false"/>
   <Class name="vtkContextMouseEvent" wrappable="false"/>
+  <Class name="vtkContextPolygon" wrappable="false"/>
   <Class name="vtkContourRepresentationNode" wrappable="false"/>
+  <Class name="vtkDebugLeaksObserver" wrappable="false"/>
   <Class name="vtkEdgeType" wrappable="false"/>
   <Class name="vtkExodusIICacheKey" wrappable="false"/>
+  <Class name="vtkHyperTreeSuperCursor" wrappable="false"/>
   <Class name="vtkImageComplex" wrappable="false"/>
   <Class name="vtkImageConnectorSeed" wrappable="false"/>
   <Class name="vtkIndent" wrappable="false"/>
@@ -29,7 +39,9 @@
   <Class name="vtkOutEdgeType" wrappable="false"/>
   <Class name="vtkProcessingUnitResource" wrappable="false"/>
   <Class name="vtkPolygonalSurfacePointPlacerNode" wrappable="false"/>
+  <Class name="vtkQuaterniond" wrappable="false"/>
   <Class name="vtkRectf" wrappable="false"/>
+  <Class name="vtkRectd" wrappable="false"/>
   <Class name="vtkRenderState" wrappable="false"/>
   <Class name="vtkShader2" wrappable="false"/>
   <Class name="vtkShader2Collection" wrappable="false"/>
@@ -37,6 +49,8 @@
   <Class name="vtkShadowMapBakerPassLightCameras" wrappable="false"/>
   <Class name="vtkShadowMapBakerPassTextures" wrappable="false"/>
   <Class name="vtkStdString" wrappable="false"/>
+  <Class name="vtkStructuredAMRNeighbor" wrappable="false"/>
+  <Class name="vtkStructuredNeighbor" wrappable="false"/>
   <Class name="vtkTDxMotionEventInfo" wrappable="false"/>
   <Class name="vtkTextureUnitManager" wrappable="false"/>
   <Class name="vtkTIFFReaderInternal" wrappable="false"/>
@@ -46,6 +60,8 @@
   <Class name="vtkVector2f" wrappable="false"/>
   <Class name="vtkVector2i" wrappable="false"/>
   <Class name="vtkVector3d" wrappable="false"/>
+  <Class name="vtkVector3f" wrappable="false"/>
+  <Class name="vtkColor3d" wrappable="false"/>
   <Class name="vtkVolumeRayCastDynamicInfo" wrappable="false"/>
   <Class name="vtkVolumeRayCastStaticInfo" wrappable="false"/>
 @AVDN_EXTRA_EXCLUDE_CLASSES_XML@
@@ -73,7 +89,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkImageData: extra hand-crafted code -->
@@ -93,7 +109,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkImplicitFunction: shadow="true" -->
@@ -111,7 +127,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkObject: extra hand-crafted code -->
@@ -131,7 +147,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkProgrammableAttributeDataFilter: extra hand-crafted code -->
@@ -151,7 +167,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkStringArray: extra hand-crafted code -->
@@ -171,7 +187,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
   <!-- vtkTimePointUtility: excludeMarkedLines="true" -->
@@ -190,7 +206,7 @@
     excludeMarkedLines="true"
     countedMethodsRegex="^(CreateInstance|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
 
@@ -209,7 +225,7 @@
     endExcludeRegex="^[\t ]*//ETX.*$"
     countedMethodsRegex="^(CreateImageReader2|CreateInstance|MakeTransform|New|NewInstance)$"
     emitDefaultFactoryMethod="true"
-    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/hints"
+    externalHints="@AVDN_VTK_SOURCE_DIR@/Wrapping/Tools/hints"
     />
 
 </MummySettings>
