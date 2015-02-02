@@ -127,7 +127,7 @@ public class vtkObjectTestClass
         {
         if (listAllClasses)
           {
-          //System.Console.Error.WriteLine(et.Name);
+          System.Console.Error.WriteLine(et.Name);
           System.Console.Error.WriteLine(et.AssemblyQualifiedName);
           }
 
@@ -241,9 +241,9 @@ public class vtkObjectTestClass
     string line;
 
     while ((line = file.ReadLine()) != null)
-    {
+      {
       classnames.Add(line, line);
-    }
+      }
 
     file.Close();
   }

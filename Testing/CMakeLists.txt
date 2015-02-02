@@ -10,7 +10,7 @@ SET(AVDN_CSHARP_TESTS
   "${CMAKE_CURRENT_SOURCE_DIR}/RenderWindowControlTest.cs"
   "${CMAKE_CURRENT_SOURCE_DIR}/vtkActor2DTest.cs"
   "${CMAKE_CURRENT_SOURCE_DIR}/vtkConeSourceTest.cs"
-  "${CMAKE_CURRENT_SOURCE_DIR}/vtkImageDataExtraTests.cs"
+#  "${CMAKE_CURRENT_SOURCE_DIR}/vtkImageDataExtraTests.cs"
   "${CMAKE_CURRENT_SOURCE_DIR}/vtkObjectModifiedEvtTest.cs"
   "${CMAKE_CURRENT_SOURCE_DIR}/vtkObjectTest.cs"
   "${CMAKE_CURRENT_SOURCE_DIR}/vtkPointsTest.cs"
@@ -82,8 +82,7 @@ ADD_EXECUTABLE(
 )
 
 TARGET_LINK_LIBRARIES("Kitware.VTK.CxxTests"
-  vtkViews
-  vtkVolumeRendering
+  ${VTK_LIBRARIES}
 )
 
 # Each C# test listed above:
@@ -120,23 +119,28 @@ SET(allclasses_file "${CMAKE_CURRENT_BINARY_DIR}/PrintAllTestInput.txt")
 FILE(WRITE "${allclasses_file}" "")
 
 SET(table ${WRAPPED_CLASS_TABLE})
+set(previousline "")
 FOREACH(entry ${table})
-  # each 'entry' looks like: "${cxxclass} ${kit} ${abstract} ${header}"
-  STRING(REGEX REPLACE "^([^ ]+) ([^ ]+) ([^ ]+) (.*)$" "\\1" cxxclass "${entry}")
-
+  # each 'entry' looks like: "${cxxclass} ${kit} ${header}"
+  STRING(REGEX REPLACE "^([^ ]+) ([^ ]+) (.*)$" "\\1" cxxclass "${entry}")
+  
   # The exclusions presently cause this test to crash or fail...
   # Fix VTK and then remove these exclusions:
   #
-  IF(NOT cxxclass MATCHES "^(vtkImageViewer2|vtkInteractorStyleTrackball|vtkObjectBase|vtkOrientedPolygonalHandleRepresentation3D|vtkPolygonalHandleRepresentation3D|vtkStructuredPointsGeometryFilter|vtkTreeMapViewer)$")
-    FILE(APPEND "${allclasses_file}" "${cxxclass}\n")
-  ENDIF(NOT cxxclass MATCHES "^(vtkImageViewer2|vtkInteractorStyleTrackball|vtkObjectBase|vtkOrientedPolygonalHandleRepresentation3D|vtkPolygonalHandleRepresentation3D|vtkStructuredPointsGeometryFilter|vtkTreeMapViewer)$")
+  if(NOT "${cxxclass}" STREQUAL "${previousline}")
+    IF(NOT cxxclass MATCHES "^(vtkMathTextUtilities)$")
+	  FILE(APPEND "${allclasses_file}" "${cxxclass}\n")
+    ENDIF()
+  endif()	
+  set(previousline ${cxxclass})
 ENDFOREACH(entry)
 
 ADD_CSHARP_TEST(PrintAll
   ${EXE_DIR}/Kitware.VTK.CSharpTests.exe vtkObjectTest --classnames-file "${allclasses_file}"
 )
 SET_TESTS_PROPERTIES(PrintAll PROPERTIES
-  FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
+#  FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
+  FAIL_REGULAR_EXPRESSION "(ERROR): In"
 )
 
 # Special properties for some tests:

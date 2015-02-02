@@ -35,20 +35,6 @@ foreach(py_file
   )
 endforeach()
 
-# vtkClassList.py
-FILE(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "VTKClassList = [\n\"___list_begins___\",\n")
-FOREACH(entry ${WRAPPED_CLASS_TABLE})
-  STRING(REGEX REPLACE "^([^ ]+) .*$" "\\1" cxxclass "${entry}")
-    # each 'entry' looks like: "${cxxclass} ${kit} ${abstract} ${header}"
-  FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"${cxxclass}\",\n")
-ENDFOREACH(entry)
-FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"__list_ends__\"\n]\n\ndef get_vtk_classes():\n  return VTKClassList\n")
-configure_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in
-  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py
-  COPYONLY
-)
-
 # Generate the list of vtkColors
 MESSAGE(STATUS "Generating vtkColors.py.in / vtkColors.py")
 EXECUTE_PROCESS (COMMAND ${PYTHON_EXE} GenerateVtkColors.py
@@ -73,10 +59,23 @@ configure_file(
   COPYONLY
 )
 
+# vtkClassList.py
+FILE(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "VTKClassList = [\n\"___list_begins___\",\n")
+FOREACH(entry ${WRAPPED_CLASS_TABLE})
+  STRING(REGEX REPLACE "^([^ ]+) .*$" "\\1" cxxclass "${entry}")
+    # each 'entry' looks like: "${cxxclass} ${kit} ${abstract} ${header}"
+  FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"${cxxclass}\",\n")
+ENDFOREACH(entry)
+FILE(APPEND "${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in" "\"__list_ends__\"\n]\n\ndef get_vtk_classes():\n  return VTKClassList\n")
+configure_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vtkClassList.py
+  COPYONLY
+)
 
 MACRO(CONVERT_VTK_TCL_SCRIPT_TO_CSHARP cvtstc_file cvtstc_listvar)
   GET_FILENAME_COMPONENT(cvtstc_name_we "${cvtstc_file}" NAME_WE)
-
+  
   ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/AV${cvtstc_name_we}.cs
     COMMAND ${PYTHON_EXE}
@@ -93,18 +92,7 @@ MACRO(CONVERT_VTK_TCL_SCRIPT_TO_CSHARP cvtstc_file cvtstc_listvar)
   SET(${cvtstc_listvar} ${${cvtstc_listvar}} "${CMAKE_CURRENT_BINARY_DIR}/AV${cvtstc_name_we}.cs")
 ENDMACRO(CONVERT_VTK_TCL_SCRIPT_TO_CSHARP)
 
-
-# Initialize lists (one per kit plus one catchall named "Other"):
-#
-SET(kits ${AVDN_KITS})
-
 SET(Other_outputlist "")
-FOREACH(kit ${kits})
-  SET(${kit}_outputlist "")
-ENDFOREACH(kit)
-
-
-
 
 FILE(READ "Currently_Compiling_Tests.txt" testlist)
 STRING(REGEX REPLACE ";" "\\\\;" testlist "${testlist}")
@@ -116,13 +104,20 @@ FOREACH(t ${testlist})
     STRING(REGEX REPLACE "^(.*.tcl).*E$" "\\1" tclfile "${t}")
 
     IF("${AVDN_VTK_SOURCE_DIR}/${tclfile}" MATCHES "^.*/([^/]+)/Testing/Tcl/.*$")
-      STRING(REGEX REPLACE "^.*/([^/]+)/Testing/Tcl/.*$" "\\1" kit "${AVDN_VTK_SOURCE_DIR}/${tclfile}")
+      STRING(REGEX REPLACE "^.*/([^/]+/[^/]+)/Testing/Tcl/.*$" "\\1" kit "${AVDN_VTK_SOURCE_DIR}/${tclfile}")
+	  STRING(REGEX REPLACE "/" "_" kit "${kit}")
     ELSE()
       SET(kit "Other")
     ENDIF()
-
-    #MESSAGE(STATUS "kit='${kit}' t='${t}'")
-
+    
+	# Add the list of kits
+    if(NOT ${kit} EQUAL "Other")
+	  list(FIND kits ${kit} KITFOUND)
+	  if(KITFOUND EQUAL "-1")
+	    set(kits ${kits} ${kit})
+	   endif()
+	 endif()
+    #MESSAGE(STATUS "kit='${kit}' tclfile='${tclfile}'")
     CONVERT_VTK_TCL_SCRIPT_TO_CSHARP("${AVDN_VTK_SOURCE_DIR}/${tclfile}" ${kit}_outputlist)
   ENDIF(NOT "${t}" MATCHES "^#")
   ENDIF("${t}" MATCHES "^(.*.tcl).*E$")
@@ -179,7 +174,18 @@ ENDFOREACH(kit)
 SET(fail_on_image_diff_flag "--fail-on-image-diff")
 
 FOREACH(kit ${kits})
+
+  set(create_test 1)
+  # For now disable the parallel test if VTK was not built with parallel
+  if(NOT AVDN_VTK_PARALLEL_MPI)
+    if(${kit} MATCHES "Parallel")
+	  set(create_test 0)
+    endif()
+  endif()
+  
+  if(${create_test})
   FOREACH(test ${${kit}_outputlist})
+	STRING(REGEX REPLACE "_" "/" kitdir "${kit}")
     GET_FILENAME_COMPONENT(name "${test}" NAME)
     GET_FILENAME_COMPONENT(name_we "${test}" NAME_WE)
     STRING(REGEX REPLACE "^AV(.*)$" "\\1" pngname "${name_we}")
@@ -187,13 +193,14 @@ FOREACH(kit ${kits})
       ${EXE_DIR}/Kitware.VTK.ConvertedTclTests.exe ${name_we}
       -D ${AVDN_VTK_DATA_ROOT}
       -T ${CMAKE_BINARY_DIR}/Testing/Temporary
-      -V Baseline/${kit}/${pngname}.png
+      -V ${VTK_DIR}/ExternalData/${kitdir}/Testing/Data/Baseline/${pngname}.png
       ${fail_on_image_diff_flag}
     )
     SET_TESTS_PROPERTIES(${name} PROPERTIES
       FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
     )
   ENDFOREACH(test)
+  endif()
 ENDFOREACH(kit)
 
 
@@ -203,25 +210,19 @@ FILE(GLOB_RECURSE HAND_CONVERTED_TESTS "Convert By Hand/*.cs")
 FOREACH(test ${HAND_CONVERTED_TESTS})
   GET_FILENAME_COMPONENT(path1 "${test}" PATH)
   GET_FILENAME_COMPONENT(dir "${path1}" NAME)
-  IF(${dir} STREQUAL "Parallel")
-    IF(NOT AVDN_VTK_USE_PARALLEL)
+  GET_FILENAME_COMPONENT(path2 "${path1}" PATH)
+  GET_FILENAME_COMPONENT(dir2 "${path2}" NAME)
+  IF(${dir} STREQUAL "Parallel" OR ${dir2} STREQUAL "Parallel")
+    IF(NOT AVDN_VTK_PARALLEL_MPI)
       LIST(REMOVE_ITEM HAND_CONVERTED_TESTS ${test})
-    ENDIF(NOT AVDN_VTK_USE_PARALLEL)
-  ENDIF(${dir} STREQUAL "Parallel")
-ENDFOREACH(test ${HAND_CONVERTED_TESTS})
+    ENDIF()
+  ENDIF()
+ENDFOREACH()
 
 #classes that use parallel classes but are not in the parallel folder
-IF(NOT AVDN_VTK_USE_PARALLEL)
+IF(NOT AVDN_VTK_PARALLEL_MPI)
   LIST(REMOVE_ITEM HAND_CONVERTED_TESTS "${CMAKE_CURRENT_SOURCE_DIR}/Convert By Hand/Graphics/AVStreamPolyData.cs")
-ENDIF(NOT AVDN_VTK_USE_PARALLEL)
-
-#IF(AVDN_VTK_USE_PARALLEL)
-  #only use GLOB_RECURSE if parallel is turned on
-
-  #ELSE(AVDN_VTK_USE_PARALLEL)
-  #don't include subdirs if parallel is off
-  # FILE(GLOB HAND_CONVERTED_TESTS "Convert By Hand/*.cs")
-  #ENDIF(AVDN_VTK_USE_PARALLEL)
+ENDIF(NOT AVDN_VTK_PARALLEL_MPI)
 
 ADD_CSHARP_EXECUTABLE(
   "Kitware.VTK.ConvertedByHandTclTests"
@@ -233,32 +234,38 @@ ADD_CSHARP_EXECUTABLE(
   ${HAND_CONVERTED_TESTS}
 )
 
+# List of tests that should be running but if TCL is not enabled for
+# VTK then the baseline images might not be downloaded from MIDAS
+set(TEST_WITHOUT_BASELINE
+AVTestPolygonWriters.cs
+)
+
 FOREACH(test ${HAND_CONVERTED_TESTS})
   GET_FILENAME_COMPONENT(path "${test}" PATH)
   GET_FILENAME_COMPONENT(dir "${path}" NAME)
+  GET_FILENAME_COMPONENT(path2 "${path}" PATH)
+  GET_FILENAME_COMPONENT(dir2 "${path2}" NAME)
   GET_FILENAME_COMPONENT(name "${test}" NAME)
   GET_FILENAME_COMPONENT(name_we "${test}" NAME_WE)
+  
+  # Check if the current name is in the list of tests without baseline
+  SET(fail_on_image_diff_flag "--fail-on-image-diff")
+  list(FIND TEST_WITHOUT_BASELINE ${name} HasNoBaseline)
+  IF(NOT HasNoBaseline EQUAL -1)
+    set(fail_on_image_diff_flag "")
+  ENDIF()
+
   STRING(REGEX REPLACE "^AV(.*)$" "\\1" pngname "${name_we}")
   ADD_CSHARP_TEST(${name}
     ${EXE_DIR}/Kitware.VTK.ConvertedByHandTclTests.exe ${name_we}
     -D ${AVDN_VTK_DATA_ROOT}
     -T ${CMAKE_BINARY_DIR}/Testing/Temporary
-    -V Baseline/${dir}/${pngname}.png
+    -V ${VTK_DIR}/ExternalData/${dir2}/${dir}/Testing/Data/Baseline/${pngname}.png
     ${fail_on_image_diff_flag}
   )
   SET_TESTS_PROPERTIES(${name} PROPERTIES
-    FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
+    FAIL_REGULAR_EXPRESSION "(ERROR): In"
+#    FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
   )
 ENDFOREACH(test)
 
-#FOREACH(test ${AVDN_CONVERTED_TCL_TESTS})
-#  GET_FILENAME_COMPONENT(name "${test}" NAME)
-#  GET_FILENAME_COMPONENT(name_we "${test}" NAME_WE)
-#  STRING(REGEX REPLACE "^AV(.*)$" "\\1" pngname "${name_we}")
-#  ADD_CSHARP_TEST(${name}
-#    ${EXE_DIR}/Kitware.VTK.ConvertedTclTests.exe ${name_we}
-#  )
-#  SET_TESTS_PROPERTIES(${name} PROPERTIES
-#    FAIL_REGULAR_EXPRESSION "(ERROR|Warning): In"
-#  )
-#ENDFOREACH(test)

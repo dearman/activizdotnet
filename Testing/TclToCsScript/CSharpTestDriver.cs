@@ -149,7 +149,6 @@ public class TclToCsScriptTestDriver
             {
               throw new System.Exception("");
             }
-
             rtTester.SetRenderWindow(tempRenderWindow);
 
             if (tempViewer.IsA("vtkImageViewer") != 0)

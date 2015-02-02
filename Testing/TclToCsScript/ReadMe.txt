@@ -50,21 +50,12 @@
 //-------------------------------------------------------
 
 Issues with the vtkTclToCsConvertor.py:
-
 In TestRectilinearGridToTetrahedra.tcl vtkDataObject tries to call GetNumberOfCells but it does not own a method called GetNumberOfCells, GetInput needs to be casted to something
-
 vtkPlane.SetOrgin needs to take in an array of doubles instead of a ref double
-
 EnSightRectGridASCII.tcl uses GetCenter on a vtkDataObject and vtkDataObject doesn't have GetCenter
-
 vtkRenderWindowInteractor.SetInteractorStyle is given "" as an argument, but all it can take so far is a vtkInteractorObserver in C:\VTK\Example\Gui\Testing\SphereWidget.cs
-
 vtkDataSetMapper.ScalarVisibilityOf in C:\VTK\Graphics\Testing\Tcl\clipQuadraticCells
-
 base/base1 does not seem to have been defined in C:\VTK\Graphics\Testing\Tcl\clipQuadraticCells
-
 there is a method being called named SetDifuseColor and the object calling it has a method named SetDiffuseColor, but not SetDifuseColor. Possible Error?
-
 clipVolume 2 is trying to take in a ref double, but just listing the numbers seems to work fine will this work for the other ref doubles?
-
 vtkCylinderSource.SetResolveCoincidentTopologyToPolygonOffset in C:\VTK\Example\Rendering\Tcl

@@ -7,7 +7,7 @@ if  not input_file:
     print "Usage: %s [-vtkdir <path to the vtk source tree>] [-k ...] ..." % sys.argv[0]
     print "Got Args: %s" % `sys.argv`
     sys.exit(1)
-input_file = input_file+"/Common/vtkCommand.h"
+input_file = input_file+"/Common/Core/vtkCommand.h"
 fp = file(input_file, "r")
 fp = fp.readlines()
 
@@ -19,7 +19,7 @@ for f in fp:
   if f.strip() == "};":
     Start = False
   # New style:
-  if f.strip() == "#define VTK_DECLARE_EVENTIDS(_enum_name)\\":
+  if f.strip() == "#define vtkEventDeclarationMacro(_enum_name)\\":
     Start = False
     output += "\"UserEvent\",\n"
 
@@ -43,7 +43,7 @@ for f in fp:
   if f.strip().replace(" ","").replace("\n","") == "enumEventIds{":
     Start = True
   # New style:
-  if f.strip().replace(" ","").replace("\n","") == "#defineVTK_EVENT_TYPES\\":
+  if f.strip().replace(" ","").replace("\n","") == "#definevtkAllEventsMacro()\\":
     Start = True
     output += "\"NoEvent\",\n"
 

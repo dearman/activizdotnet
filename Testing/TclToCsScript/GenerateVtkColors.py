@@ -7,7 +7,7 @@ if  not input_file:
     print "Usage: %s [-vtkdir <path to the vtk source tree>] [-k ...] ..." % sys.argv[0]
     print "Got Args: %s" % `sys.argv`
     sys.exit(1)
-input_file = input_file+"/Common/Testing/Cxx/vtkTestingColors.h"
+input_file = input_file+"/Testing/Core/vtkTestingColors.h"
 fp = file(input_file, "r")
 fp = fp.readlines()
 output = """class vtkColors:
