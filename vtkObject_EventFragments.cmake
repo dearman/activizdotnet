@@ -1,6 +1,6 @@
 # Everything except for "NoEvent" and "UserEvent"...
 #
-SET(vtkObject_EventFragments
+set(vtkObject_EventFragments
   AbortCheck
   AnimationCueTick
   Any
