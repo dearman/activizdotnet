@@ -3,7 +3,7 @@
    /// </summary>
    public delegate void ExecuteMethodHandler(IntPtr arg);
 
-   [DllImport(vtkGraphicsEL_dll, EntryPoint = "vtkProgrammableAttributeDataFilter_SetExecuteMethod")]
+   [DllImport(vtkFiltersProgrammableEL_dll, EntryPoint = "vtkProgrammableAttributeDataFilter_SetExecuteMethod")]
    internal static extern void vtkProgrammableAttributeDataFilter_SetExecuteMethod(HandleRef pThis, ExecuteMethodHandler handler, IntPtr arg);
 
    /// <summary>

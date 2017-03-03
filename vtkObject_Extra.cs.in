@@ -1,4 +1,4 @@
-  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObject_Print")]
+  [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkObject_Print")]
   static extern string vtkObject_Print(HandleRef pThis);
 
   /// <summary>
@@ -149,7 +149,7 @@ public class vtkObjectEventRelay : WrappedObject
    }
 
 
-   [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_New")]
+   [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkObjectEventRelay_New")]
    internal static extern IntPtr vtkObjectEventRelay_New(ref uint mteStatus, ref uint mteIndex, ref uint rawRefCount);
 
   /// <summary>
@@ -176,7 +176,7 @@ public class vtkObjectEventRelay : WrappedObject
    }
 
 
-   [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_Delete")]
+   [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkObjectEventRelay_Delete")]
    internal static extern void vtkObjectEventRelay_Delete(HandleRef pThis);
 
    /// <summary>
@@ -213,7 +213,7 @@ public class vtkObjectEventRelay : WrappedObject
     IntPtr caller, uint eventId, IntPtr callData);
   private RelayHandler RelayHandlerDelegate;
 
-  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_AddObserver")]
+  [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkObjectEventRelay_AddObserver")]
   internal static extern uint vtkObjectEventRelay_AddObserver(
     HandleRef pThis, HandleRef sender, uint eventid, RelayHandler handler, float priority);
 
@@ -230,7 +230,7 @@ public class vtkObjectEventRelay : WrappedObject
   }
 
 
-  [DllImport(vtkCommonEL_dll, EntryPoint = "vtkObjectEventRelay_RemoveObserver")]
+  [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkObjectEventRelay_RemoveObserver")]
   internal static extern uint vtkObjectEventRelay_RemoveObserver(
     HandleRef pThis, uint observerId);
 

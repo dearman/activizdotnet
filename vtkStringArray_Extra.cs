@@ -1,4 +1,4 @@
-   [DllImport(vtkCommonEL_dll, EntryPoint = "vtkStringArray_GetValue")]
+   [DllImport(vtkCommonCoreEL_dll, EntryPoint = "vtkStringArray_GetValue")]
    internal static extern string vtkStringArray_GetValue(HandleRef pThis, long id);
 
    /// <summary>
