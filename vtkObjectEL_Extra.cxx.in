@@ -1,16 +1,16 @@
 
-#include "vtksys/ios/sstream"
-#include "vtksys/stl/string"
+#include <string>
+#include <sstream>
 
 
 //----------------------------------------------------------------------------
 extern "C" MUMMY_DLL_EXPORT
 const char *vtkObject_Print(vtkObject* pThis)
 {
-   vtksys_ios::ostringstream oss;
+   std::ostringstream oss;
    pThis->Print(oss);
 
-   vtksys_stl::string rvmi(oss.str());
+   std::string rvmi(oss.str());
 
    const char* rvm = rvmi.c_str();
    size_t n = 0;
