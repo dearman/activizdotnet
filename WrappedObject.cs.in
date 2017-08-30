@@ -60,17 +60,17 @@ namespace @csharp_namespace@
         s = o.ToString();
       }
 
-      // from vtkRenderingVolumeOpenGL
-      using (Kitware.VTK.vtkOpenGLVolumeTextureMapper2D o = Kitware.VTK.vtkOpenGLVolumeTextureMapper2D.New())
-      {
-        s = o.ToString();
-      }
-
-      // from vtkRenderingFreeTypeOpenGL
-      using (Kitware.VTK.vtkOpenGLFreeTypeTextMapper o = Kitware.VTK.vtkOpenGLFreeTypeTextMapper.New())
-      {
-        s = o.ToString();
-      }
+      //// from vtkRenderingVolumeOpenGL
+      //using (Kitware.VTK.vtkOpenGLVolumeTextureMapper2D o = Kitware.VTK.vtkOpenGLVolumeTextureMapper2D.New())
+      //{
+      //  s = o.ToString();
+      //}
+	  //
+      //// from vtkRenderingFreeTypeOpenGL
+      //using (Kitware.VTK.vtkOpenGLFreeTypeTextMapper o = Kitware.VTK.vtkOpenGLFreeTypeTextMapper.New())
+      //{
+      //  s = o.ToString();
+      //}
     }
   }
 }
