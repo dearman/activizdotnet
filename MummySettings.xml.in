@@ -64,6 +64,19 @@
   <Class name="vtkColor3d" wrappable="false"/>
   <Class name="vtkVolumeRayCastDynamicInfo" wrappable="false"/>
   <Class name="vtkVolumeRayCastStaticInfo" wrappable="false"/>
+  <Class name="vtkRecti" wrappable="false"/>
+  <Class name="vtkFastGeomQuadStruct" wrappable="false"/>
+  <Class name="vtkPainterDeviceAdapter" wrappable="false"/>
+  <Class name="vtkOpenGLImageAlgorithmCallback" wrappable="false"/>
+  <Class name="vtkOpenGLVertexBufferObject" wrappable="false"/>
+  <Class name="vtkOpenGLBufferObject" wrappable="false"/>
+  <Class name="vtkOpenGLVertexArrayObject" wrappable="false"/>
+  <Class name="vtkTextureObject" wrappable="false"/>
+  <Class name="vtkOpenGLShaderCache" wrappable="false"/>
+  <Class name="vtkGenericOpenGLResourceFreeCallback" wrappable="false"/>
+  <Class name="vtkTransformFeedback" wrappable="false"/>
+  <Class name="vtkRenderbuffer" wrappable="false"/>
+  <Class name="vtkPixelBufferObject" wrappable="false"/>
 @AVDN_EXTRA_EXCLUDE_CLASSES_XML@
 
   <!-- Class patterns to exclude from wrapped layers -->
