@@ -154,13 +154,13 @@ endif()
 include_directories(${Mummy_INCLUDE_DIRS})
 
 
-set(gccxml_compiler "${CMAKE_CXX_COMPILER}")
-if(MSVC80)
-  set(gccxml_compiler "msvc8")
-endif()
-if(MSVC90)
-  set(gccxml_compiler "msvc9")
-endif()
+#set(gccxml_compiler "${CMAKE_CXX_COMPILER}")
+#if(MSVC80)
+#  set(gccxml_compiler "msvc8")
+#endif()
+#if(MSVC90)
+#  set(gccxml_compiler "msvc9")
+#endif()
 
 # VTK:
 #
@@ -465,6 +465,11 @@ macro(derive_gccxml_include_args)
   endforeach()
 endmacro()
 
+#
+# Exclude Modules
+#
+set(vtkDomainsChemistry_EXCLUDE_FROM_WRAPPING 1)
+set(vtkDomainsChemistryOpenGL2_EXCLUDE_FROM_WRAPPING 1)
 
 set(modules ${VTK_MODULES_ENABLED})
 foreach(module ${modules})
@@ -551,7 +556,7 @@ ENDIF()
         COMMAND ${gccxml_EXECUTABLE}
           -fxml=${ActiVizDotNet_BINARY_DIR}/xml/${cxxclass}.xml
           -fxml-start=_cable_
-          ${gccxml_include_args} -DCABLE_CONFIGURATION
+          ${gccxml_include_args} -DCABLE_CONFIGURATION 
           --gccxml-compiler ${gccxml_compiler}
           ${ActiVizDotNet_BINARY_DIR}/xml/${cxxclass}_gccxml.cxx
         DEPENDS
@@ -804,6 +809,7 @@ if(AVDN_DO_COPY_LIBRARIES_STEPS)
     #
     SET(VCL_deps "")
     SET(vtk_dll_dir "${VTK_DIR}/bin/${CMAKE_CFG_INTDIR}")
+	SET(vtk_lib_dir "${VTK_DIR}/lib/${CMAKE_CFG_INTDIR}")
 
     # Since this whole chunk copies files from ${vtk_dll_dir} to
     # ${exe_dir}, only add the commands to do it if those directories
@@ -829,7 +835,7 @@ if(AVDN_DO_COPY_LIBRARIES_STEPS)
         vtkalglib
         vtkDICOMParser
         vtkexoIIc
-        vtkftgl
+        #vtkftgl
         vtkhdf5
         vtkhdf5_hl
         vtkmetaio
@@ -838,6 +844,7 @@ if(AVDN_DO_COPY_LIBRARIES_STEPS)
         vtksys
         vtkverdict
 		vtkjsoncpp
+		vtkglew
       )
 
       IF(NOT AVDN_VTK_USE_SYSTEM_EXPAT)
@@ -1040,13 +1047,17 @@ else()
         target_link_libraries(Kitware.VTK.${module}.Unmanaged "${exe_dir}/${CMAKE_SHARED_LIBRARY_PREFIX}Kitware.mummy.Runtime.Unmanaged${CMAKE_SHARED_LIBRARY_SUFFIX}")
       endif()
       target_link_libraries(Kitware.VTK.${module}.Unmanaged ${module})
-      # This is odd and should be changed (by JJ)
-      target_link_libraries(Kitware.VTK.${module}.Unmanaged vtkRenderingFreeTypeOpenGL vtkRenderingFreeType vtkInteractionStyle vtkRenderingVolumeOpenGL)
+	  
+      # This is odd and should be changed (by JJ) 
+	  # (edited by Mark D)
+	  SET(vtk_lib_dir "${VTK_DIR}/lib/${CMAKE_CFG_INTDIR}")
+      target_link_libraries(Kitware.VTK.${module}.Unmanaged ${vtk_lib_dir}/vtkRenderingContextOpenGL2-7.1.lib ${vtk_lib_dir}/vtkRenderingOpenGL2-7.1.lib ${vtk_lib_dir}/vtkRenderingFreeType-7.1.lib ${vtk_lib_dir}/vtkRenderingVolumeOpenGL2-7.1.lib ${vtk_lib_dir}/vtkInteractionStyle-7.1.lib ${vtk_lib_dir}/vtkRenderingGL2PSOpenGL2-7.1.lib)
+	  #vtkRenderingFreeTypeOpenGL vtkRenderingFreeType vtkInteractionStyle vtkRenderingVolumeOpenGL)
       foreach(dep ${${module}_LINK_DEPENDS})
         if(NOT "${dep}" STREQUAL "${module}")
-          if(NOT ${dep}_EXCLUDE_FROM_WRAPPING)
+          #if(NOT ${dep}_EXCLUDE_FROM_WRAPPING)
             target_link_libraries(Kitware.VTK.${module}.Unmanaged ${dep})
-          endif()
+          #endif()
         endif()
       endforeach()
       set_property(TARGET Kitware.VTK.${module}.Unmanaged APPEND
