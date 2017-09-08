@@ -10,9 +10,15 @@ ActiViz .NET provides an integration layer for The Visualization Toolkit (see th
 section for more information about VTK) enabling VTK to be used in the Microsoft
 .NET framework. This means that you can tap into the power of VTK using .NET
 programming languages such as C# and Visual Basic .NET. ActiViz .NET is designed for
-the application developer creating software in the Microsoft .NET framework. While the
-system does come with a useful application (i.e., the Wikipedia Browser), realizing the
-full power of ActiViz .NET requires you to write software programs.
+the application developer creating software in the Microsoft .NET Framework.
+
+VTK is an open-source system written in C++ that you can download and use for free.
+However using VTK requires significant C++ developer skills, and VTK does not easily
+integrate into the Microsoft development environment. ActiViz .NET provides the
+appropriate integration layer so that VTK seamlessly fits into the .NET framework. This
+means that you can use languages such as C# and Visual Basic to add powerful 3D
+visualization capabilities to your own applications. This integration layer provides the
+benefits of the .NET layer including on-line documentation and intelligent coding.
 
 ## Binary Downloads
 
