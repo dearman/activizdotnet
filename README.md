@@ -22,5 +22,5 @@ benefits of the .NET layer including on-line documentation and intelligent codin
 
 ## Binary Downloads
 
-Visual Studio 2013 / ICC 2016 / CSC .NET 4.0 Debug Release
+Visual Studio 2013 / ICC 2016 / CSC .NET 4.0 Debug (x86)
 http://www.cascadeacoustic.com/files/downloads/General/ActiViz_711d.zip
