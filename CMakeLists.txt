@@ -836,8 +836,8 @@ if(AVDN_DO_COPY_LIBRARIES_STEPS)
         vtkDICOMParser
         vtkexoIIc
         #vtkftgl
-        vtkhdf5
-        vtkhdf5_hl
+        #vtkhdf5
+        #vtkhdf5_hl
         vtkmetaio
         vtkNetCDF
         vtkNetCDF_cxx
