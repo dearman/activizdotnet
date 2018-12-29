@@ -1053,6 +1053,7 @@ else()
 	  SET(vtk_lib_dir "${VTK_DIR}/lib/${CMAKE_CFG_INTDIR}")
       target_link_libraries(Kitware.VTK.${module}.Unmanaged ${vtk_lib_dir}/vtkRenderingContextOpenGL2-7.1.lib ${vtk_lib_dir}/vtkRenderingOpenGL2-7.1.lib ${vtk_lib_dir}/vtkRenderingFreeType-7.1.lib ${vtk_lib_dir}/vtkRenderingVolumeOpenGL2-7.1.lib ${vtk_lib_dir}/vtkInteractionStyle-7.1.lib ${vtk_lib_dir}/vtkRenderingGL2PSOpenGL2-7.1.lib)
 	  #vtkRenderingFreeTypeOpenGL vtkRenderingFreeType vtkInteractionStyle vtkRenderingVolumeOpenGL)
+	  
       foreach(dep ${${module}_LINK_DEPENDS})
         if(NOT "${dep}" STREQUAL "${module}")
           #if(NOT ${dep}_EXCLUDE_FROM_WRAPPING)
@@ -1060,6 +1061,7 @@ else()
           #endif()
         endif()
       endforeach()
+	  
       set_property(TARGET Kitware.VTK.${module}.Unmanaged APPEND
         PROPERTY INCLUDE_DIRECTORIES
         ${${module}_DEPENDS_INCLUDE_DIRS}
@@ -1111,7 +1113,8 @@ ADD_CSHARP_LIBRARY(
   "Kitware.VTK" # name of library
   "${unmanaged_targets}" # list of CMake targets that need to build first
   "${AVDN_VTK_CSC_REFS}" # list of csc "/reference:" args
-  "${unmanaged_dlls}" # list of csc "/linkresource:" args
+#  "${unmanaged_dlls}" # list of csc "/linkresource:" args
+  "" # Stop automatic bundling of deps
   "${AVDN_SNKEYFILE}" # strong name signing keyfile
   # Source files:
   ${ALLMODULES_CS_SOURCES}
