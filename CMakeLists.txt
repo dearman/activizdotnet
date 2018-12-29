@@ -319,7 +319,7 @@ set(AVDN_SOURCE_TREE_IS_SVN_CHECKOUT 0)
 set(AVDN_SVN_STATUS "")
 set(AVDN_SVN_STATUS_BRIEF "")
 set(AVDN_SVN_STATUS_ENCODED "")
-set(AVDN_WC_LAST_CHANGED_REV "1009")
+set(AVDN_WC_LAST_CHANGED_REV "1200")
   #
   # This value is an artificial number that is simply incremented manually
   # now after switching to git from svn... Whenever we do "real packaging
