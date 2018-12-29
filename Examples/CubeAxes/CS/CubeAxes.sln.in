@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CubeAxes", "CubeAxes.csproj", "{23F4EDC2-45D9-4FD5-AF7F-EAAB140A2246}"
 EndProject
 Global

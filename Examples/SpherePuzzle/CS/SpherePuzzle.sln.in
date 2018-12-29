@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpherePuzzle", "SpherePuzzle.csproj", "{280013AB-9EF8-4CDC-A24B-0417D2F3BCD7}"
 EndProject
 Global

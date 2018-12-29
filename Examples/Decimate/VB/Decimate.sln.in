@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Decimate", "Decimate.vbproj", "{80FEB08B-BFE3-49D9-AC1A-5D812AA9524D}"
 EndProject
 Global
